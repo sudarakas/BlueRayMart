@@ -65,8 +65,8 @@
                         </ul>
                     </div>
                     <div class="col-md-6 col-sm-6">
-                        <h2 class="title"> Becky Silk Blazer </h2>
-                        <h3 class="main-price">$335</h3>
+                        <h2 class="title"> Avengers End Game 2019 </h2>
+                        <h3 class="main-price">LKR 335</h3>
                         <div id="acordeon">
                             <div class="panel-group" id="accordion">
                                 <div class="panel panel-border panel-default">

@@ -28,7 +28,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="../presentation.html">Material Kit PRO</a>
+                <a class="navbar-brand" href="/">BlueRay Mart</a>
             </div>
 
             <div class="collapse navbar-collapse">
@@ -59,7 +59,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="http://www.creative-tim.com/buy/material-kit-pro?ref=presentation" target="_blank" class="btn btn-primary">
+                        <a href="" target="_blank" class="btn btn-primary">
                             <i class="material-icons">shopping_cart</i> Buy Now
                         </a>
                     </li>
