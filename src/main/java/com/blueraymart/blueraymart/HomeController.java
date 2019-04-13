@@ -33,4 +33,9 @@ public class HomeController {
         
         return "movieList";
     }
+    
+    @RequestMapping("/movieList/viewMovie")
+    public String viewMovie(){
+        return "viewMovie";
+    }
 }
