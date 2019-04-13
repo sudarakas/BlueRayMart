@@ -7,9 +7,11 @@ package com.blueraymart.blueraymart;
 
 import com.blueraymart.dao.MovieDao;
 import com.blueraymart.model.Movie;
+import java.io.IOException;
 import java.util.List;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
@@ -34,8 +36,10 @@ public class HomeController {
         return "movieList";
     }
     
-    @RequestMapping("/movieList/viewMovie")
-    public String viewMovie(){
+    @RequestMapping("/movieList/viewMovie/{movieID}")
+    public String viewMovie(@PathVariable String movieID, Model model) throws IOException{
+        Movie movie = movieDao.getMovieByID(movieID);
+        model.addAttribute(movie);
         return "viewMovie";
     }
 }

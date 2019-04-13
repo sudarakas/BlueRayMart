@@ -10,6 +10,7 @@ package com.blueraymart.model;
  * @author NanoX
  */
 public class Movie {
+    private String movieID;
     private String movieName;
     private String movieFormat;
     private String movieGenre;
@@ -22,9 +23,17 @@ public class Movie {
     private String movieIMDB;
     private String movieDescription;
     private double moviePrice;
-    private double movieUnitinStock;
+    private int movieUnitinStock;
     private String movieStatus;
 
+    public String getMovieID() {
+        return movieID;
+    }
+
+    public void setMovieID(String movieID) {
+        this.movieID = movieID;
+    }
+    
     public String getMovieName() {
         return movieName;
     }
@@ -121,11 +130,11 @@ public class Movie {
         this.moviePrice = moviePrice;
     }
 
-    public double getMovieUnitinStock() {
+    public int getMovieUnitinStock() {
         return movieUnitinStock;
     }
 
-    public void setMovieUnitinStock(double movieUnitinStock) {
+    public void setMovieUnitinStock(int movieUnitinStock) {
         this.movieUnitinStock = movieUnitinStock;
     }
 
@@ -137,8 +146,8 @@ public class Movie {
         this.movieStatus = movieStatus;
     }
 
-    public void getMovieRunTime(int i) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public String getMovieRunTime(int i) {
+        return movieRunTime;
     }
     
     

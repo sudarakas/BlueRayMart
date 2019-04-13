@@ -65,8 +65,9 @@
                         </ul>
                     </div>
                     <div class="col-md-6 col-sm-6">
-                        <h2 class="title"> Avengers End Game 2019 </h2>
-                        <h3 class="main-price">LKR 335</h3>
+                        <h2 class="title"> ${movie.movieName} </h2>
+                        <h4 class="text-rose"> ${movie.movieStatus} </h4>
+                        <h3 class="main-price">LKR ${movie.moviePrice}</h3>
                         <div id="acordeon">
                             <div class="panel-group" id="accordion">
                                 <div class="panel panel-border panel-default">
@@ -80,7 +81,7 @@
                                     </div>
                                     <div id="collapseOne" class="panel-collapse collapse in">
                                         <div class="panel-body">
-                                            <p>Eres' daring 'Grigri Fortune' swimsuit has the fit and coverage of a bikini in a one-piece silhouette. This fuchsia style is crafted from the label's sculpting peau douce fabric and has flattering cutouts through the torso and back. Wear yours with mirrored sunglasses on vacation.</p>
+                                            <p>${movie.movieDescription}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -88,14 +89,19 @@
                                     <div class="panel-heading" role="tab" id="headingOne">
                                         <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-controls="collapseOne">
                                             <h4 class="panel-title">
-                                                Designer Information
+                                                Movie Information
                                                 <i class="material-icons">keyboard_arrow_down</i>
                                             </h4>
                                         </a>
                                     </div>
                                     <div id="collapseTwo" class="panel-collapse collapse">
                                         <div class="panel-body">
-                                            An infusion of West Coast cool and New York attitude, Rebecca Minkoff is synonymous with It girl style. Minkoff burst on the fashion scene with her best-selling 'Morning After Bag' and later expanded her offering with the Rebecca Minkoff Collection - a range of luxe city staples with a "downtown romantic" theme.
+                                            <strong>Genre: </strong> ${movie.movieGenre} <br>
+                                            <strong>Director:  </strong> ${movie.movieDirector} <br>
+                                            <strong>Studio:  </strong> ${movie.movieStudio} <br>
+                                            <strong>Release Date:  </strong> ${movie.movieReleaseDate} <br>
+                                            <strong>Original Language:  </strong> ${movie.movieRunTime} <br>
+                                            <strong>IMDB:  </strong> ${movie.movieIMDB} <br>
                                         </div>
                                     </div>
                                 </div>
@@ -103,42 +109,31 @@
                                     <div class="panel-heading" role="tab" id="headingOne">
                                         <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-controls="collapseOne">
                                             <h4 class="panel-title">
-                                                Details and Care
+                                                Digital Copy Detail
                                                 <i class="material-icons">keyboard_arrow_down</i>
                                             </h4>
                                         </a>
                                     </div>
                                     <div id="collapseThree" class="panel-collapse collapse">
                                         <div class="panel-body">
-                                            <ul>
-                                                <li>Storm and midnight-blue stretch cotton-blend</li>
-                                                <li>Notch lapels, functioning buttoned cuffs, two front flap pockets, single vent, internal pocket</li>
-                                                <li>Two button fastening</li>
-                                                <li>84% cotton, 14% nylon, 2% elastane</li>
-                                                <li>Dry clean</li>
-                                            </ul>
+                                            <strong>Format:  </strong> ${movie.movieFormat} <br>
+                                            <strong>Language: </strong> ${movie.movieLanguage} <br>
                                         </div>
                                     </div>
                                 </div>
 
                             </div>
                         </div><!--  end acordeon -->
-
+                        <h3 class="text-rose">Available Stock:  ${movie.movieUnitinStock} </h3>
                         <div class="row pick-size">
                             <div class="col-md-6 col-sm-6">
-                                <label>Select color</label>
+                                <label>No of Copies</label>
                                 <select class="selectpicker" data-style="select-with-transition" data-size="7">
-                                    <option value="1">Rose </option>
-                                    <option value="2">Gray</option>
-                                    <option value="3">White</option>
-                                </select>
-                            </div>
-                            <div class="col-md-6 col-sm-6">
-                                <label>Select size</label>
-                                <select class="selectpicker" data-style="select-with-transition" data-size="7">
-                                    <option value="1">Small </option>
-                                    <option value="2">Medium</option>
-                                    <option value="3">Large</option>
+                                    <option value="1">1 </option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
                                 </select>
                             </div>
                         </div>

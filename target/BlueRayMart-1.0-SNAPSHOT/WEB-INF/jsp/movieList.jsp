@@ -9,6 +9,7 @@
 <!DOCTYPE html>
 <html>
     <%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+    <%@taglib prefix="spring" uri="http://www.springframework.org/tags"%>
     <%@include file="/WEB-INF/jsp/include/header.jsp" %>
 
     <div class="main main-raised">
@@ -40,9 +41,11 @@
                                                 <span class="price"> LKR ${movie.moviePrice}</span>
                                             </div>
 
-                                            <button class="btn btn-rose pull-right" rel="tooltip" title="Added to Cart" data-placement="top">
-                                                Buy Now
-                                            </button>
+                                            <a href="<spring:url value="/movieList/viewMovie/${movie.movieID}"/>">
+                                                <button class="btn btn-rose pull-right" rel="tooltip" title="Added to Cart" data-placement="top">
+                                                    Buy Now
+                                                </button>
+                                            </a>
                                         </div>
                                     </div>
                                 </div> <!-- end card -->

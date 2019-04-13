@@ -6,8 +6,10 @@
 package com.blueraymart.dao;
 
 import com.blueraymart.model.Movie;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import javax.imageio.IIOException;
 
 /**
  *
@@ -20,6 +22,7 @@ public class MovieDao {
     public List<Movie> getMovieList(){
         Movie movie1 = new Movie();
         
+        movie1.setMovieID("M1");
         movie1.setMovieName("Harry Potter");
         movie1.setMovieDescription("A Movie");
         movie1.setMovieDirector("JK Row");
@@ -37,6 +40,7 @@ public class MovieDao {
         
         Movie movie2 = new Movie();
         
+        movie2.setMovieID("M2");
         movie2.setMovieName("Avenger End Game");
         movie2.setMovieDescription("A Marvel Movie");
         movie2.setMovieDirector("Marvel");
@@ -54,6 +58,7 @@ public class MovieDao {
         
         Movie movie3 = new Movie();
         
+        movie3.setMovieID("M3");
         movie3.setMovieName("Grown Up II");
         movie3.setMovieDescription("A Super Comdey");
         movie3.setMovieDirector("Paul");
@@ -71,6 +76,7 @@ public class MovieDao {
         
         Movie movie4 = new Movie();
         
+        movie4.setMovieID("M4");
         movie4.setMovieName("First Man");
         movie4.setMovieDescription("A Movie to the moon");
         movie4.setMovieDirector("Steaves");
@@ -94,5 +100,14 @@ public class MovieDao {
         
         return movieList;
         
+    }
+
+    public Movie getMovieByID(String movieID) throws IOException{
+        for(Movie movie: getMovieList()){
+            if(movie.getMovieID().equals(movieID)){
+                return movie;
+            }
+        }
+        throw new IIOException("Invalid Movie");
     }
 }
