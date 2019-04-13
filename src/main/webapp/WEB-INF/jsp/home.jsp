@@ -76,6 +76,9 @@
                         <div class="brand">
                             <h1 class="title">BlueRay Mart</h1>
                             <h4>Free global delivery for all movies. Use coupon <b>uwuLife</b> for an extra 25% Off</h4>
+                            <a href="/movieList" target="" class="btn btn-rose">
+                                Visit Store
+                            </a>
                         </div>
                     </div>
                 </div>
