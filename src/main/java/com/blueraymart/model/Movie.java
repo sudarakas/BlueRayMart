@@ -5,11 +5,20 @@
  */
 package com.blueraymart.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 /**
  *
  * @author NanoX
  */
+@Entity
 public class Movie {
+    
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private String movieID;
     private String movieName;
     private String movieFormat;
