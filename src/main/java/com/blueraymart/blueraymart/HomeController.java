@@ -9,6 +9,7 @@ import com.blueraymart.dao.MovieDao;
 import com.blueraymart.model.Movie;
 import java.io.IOException;
 import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -21,7 +22,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class HomeController {
     
-    private MovieDao movieDao = new MovieDao();
+    @Autowired
+    private MovieDao movieDao;
     
     @RequestMapping("/")
     public String home(){
@@ -30,7 +32,7 @@ public class HomeController {
     
     @RequestMapping("/movieList")
     public String getMovie(Model model){
-        List<Movie> movies = movieDao.getMovieList();
+        List<Movie> movies = movieDao.getAllMovies();
         model.addAttribute("movies", movies);
         
         return "movieList";
@@ -38,7 +40,7 @@ public class HomeController {
     
     @RequestMapping("/movieList/viewMovie/{movieID}")
     public String viewMovie(@PathVariable String movieID, Model model) throws IOException{
-        Movie movie = movieDao.getMovieByID(movieID);
+        Movie movie = movieDao.getMovieById(movieID);
         model.addAttribute(movie);
         return "viewMovie";
     }
