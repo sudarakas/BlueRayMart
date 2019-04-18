@@ -124,6 +124,7 @@ public class Movie {
     }
 
     public String getMovieDescription() {
+        this.movieDescription = movieDescription.substring(0, 10);
         return movieDescription;
     }
 

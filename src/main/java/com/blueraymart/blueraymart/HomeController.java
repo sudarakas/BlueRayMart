@@ -21,27 +21,52 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 @Controller
 public class HomeController {
-    
+
     @Autowired
     private MovieDao movieDao;
-    
+
     @RequestMapping("/")
-    public String home(){
+    public String home() {
         return "home";
     }
-    
+
     @RequestMapping("/movieList")
-    public String getMovie(Model model){
+    public String getMovie(Model model) {
         List<Movie> movies = movieDao.getAllMovies();
         model.addAttribute("movies", movies);
-        
+
         return "movieList";
     }
-    
+
     @RequestMapping("/movieList/viewMovie/{movieID}")
-    public String viewMovie(@PathVariable String movieID, Model model) throws IOException{
+    public String viewMovie(@PathVariable String movieID, Model model) throws IOException {
         Movie movie = movieDao.getMovieById(movieID);
         model.addAttribute(movie);
         return "viewMovie";
+    }
+
+    @RequestMapping("/admin")
+    public String admin() {
+        return "admin";
+    }
+
+    @RequestMapping("/admin/inventory")
+    public String inventory(Model model) {
+        List<Movie> movies = movieDao.getAllMovies();
+        model.addAttribute("movies", movies);
+
+        return "inventory";
+    }
+
+    @RequestMapping("/admin/inventory/addmovie")
+    public String addMovie(Model model) {
+        Movie movie = new Movie();
+        
+        movie.setMovieDirector("Nano");
+        movie.setMoviePrice(562);
+        movie.setMovieGenre("ANime");
+        
+        model.addAttribute(movie);
+        return "addMovie";
     }
 }

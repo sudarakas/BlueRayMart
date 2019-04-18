@@ -17,7 +17,9 @@ body {
     background-color: #E5E5E5;
     color: #3C4858;
 }
-
+.distable{
+    margin: auto 20px auto 20px !important;
+}
 body.inverse {
     background: #333333;
 }
