@@ -89,6 +89,26 @@
                             <label for="name">Movie Name</label>
                             <form:input path="movieName" type="text" value="" class="form-control" />
                         </div>
+                        <div class="form-group">
+                            <label for="name">Movie Genre</label>
+                            <form:input path="movieGenre" type="text" value="" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <label for="name">Movie Format</label>
+                            <form:input path="movieFormat" type="text" value="" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <label for="name">Movie Name</label>
+                            <form:input path="movieName" type="text" value="" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <label for="name">Movie Name</label>
+                            <form:input path="movieName" type="text" value="" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <label for="name">Movie Name</label>
+                            <form:input path="movieName" type="text" value="" class="form-control" />
+                        </div>
                     </form:form>
                 </div>
             </div>
