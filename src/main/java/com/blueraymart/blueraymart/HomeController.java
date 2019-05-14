@@ -26,7 +26,10 @@ public class HomeController {
     private MovieDao movieDao;
 
     @RequestMapping("/")
-    public String home() {
+    public String home(Model model) {
+        List<Movie> movies = movieDao.getLatestMovies();
+        model.addAttribute("movies", movies);
+        
         return "home";
     }
 
@@ -37,6 +40,7 @@ public class HomeController {
 
         return "movieList";
     }
+    
 
     @RequestMapping("/movieList/viewMovie/{movieID}")
     public String viewMovie(@PathVariable String movieID, Model model) throws IOException {

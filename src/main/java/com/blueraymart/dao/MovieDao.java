@@ -18,5 +18,6 @@ public interface MovieDao {
     void deleteMovie(String Id);
     Movie getMovieById(String Id);
     List<Movie> getAllMovies();
+    List<Movie> getLatestMovies();
     
 }

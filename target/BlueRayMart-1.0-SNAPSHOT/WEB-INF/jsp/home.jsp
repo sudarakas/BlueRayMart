@@ -90,205 +90,148 @@
                 <div class="container">
                     <h2 class="section-title">Latest Movies</h2>
                     <div class="row">
-                        <div class="col-md-4">
-                            <div class="card card-product card-plain">
-                                <div class="card-image">
-                                    <a href="#pablo">
-                                        <img src="../assets/img/examples/gucci.jpg" alt="" />
-                                    </a>
-                                </div>
-                                <div class="card-content">
-                                    <h4 class="card-title">
-                                        <a href="#pablo">Gucci</a>
-                                    </h4>
-                                    <p class="card-description">The structured shoulders and sleek detailing ensure a sharp
-                                        silhouette. Team it with a silk pocket square and leather loafers.</p>
-                                    <div class="footer">
-                                        <div class="price-container">
-                                            <span class="price price-new"> LKR 743</span>
-                                        </div>
-                                        <div class="stats">
-                                            <button type="button" rel="tooltip" title=""
-                                                    class="btn  btn-rose"
-                                                    data-original-title="Added to Cart">
-                                                Buy
-                                            </button>
+                        <c:forEach items="${movies}" var="movie">
+                            <div class="col-md-4">
+                                <div class="card card-product card-plain no-shadow" data-colored-shadow="false">
+                                    <div class="card-image">
+                                        <a href="#">
+                                            <img src="https://dummyimage.com/600x400/000/fff" alt="..."/>
+                                        </a>
+                                    </div>
+                                    <div class="card-content">
+                                        <a href="#">
+                                            <h4 class="card-title">${movie.movieName}</h4>
+                                        </a>
+                                        <p class="description">
+                                            <strong>Genre: </strong> ${movie.movieGenre} <br>
+                                            <strong>Status: </strong> ${movie.movieStatus}
+                                        </p>
+                                        <p class="description">
+                                            ${movie.movieDescription}
+                                        </p>
+                                        <div class="footer">
+                                            <div class="price-container">
+                                                <span class="price"> LKR ${movie.moviePrice}</span>
+                                            </div>
+
+                                            <a href="<spring:url value="/movieList/viewMovie/${movie.movieID}"/>">
+                                               <button class="btn btn-rose pull-right" rel="tooltip" title="Added to Cart" data-placement="top">
+                                                    Buy Now
+                                                </button>
+                                            </a>
                                         </div>
                                     </div>
-                                </div>
+                                </div> <!-- end card -->
                             </div>
-                        </div>
-
-                        <div class="col-md-4">
-                            <div class="card card-product card-plain">
-                                <div class="card-image">
-                                    <a href="#pablo">
-                                        <img src="../assets/img/examples/dolce.jpg" alt="" />
-                                    </a>
-                                </div>
-
-                                <div class="card-content">
-                                    <h4 class="card-title">
-                                        <h4 class="card-title">Dolce & Gabbana</h4>
-                                    </h4>
-                                    <p class="card-description">The structured shoulders and sleek detailing ensure a sharp
-                                        silhouette. Team it with a silk pocket square and leather loafers.</p>
-                                    <div class="footer">
-                                        <div class="price-container">
-                                            <span class="price price-new"> LKR 743</span>
-                                        </div>
-                                        <div class="stats">
-                                            <button type="button" rel="tooltip" title=""
-                                                    class="btn  btn-rose"
-                                                    data-original-title="Added to Cart">
-                                                Buy
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <div class="col-md-4">
-
-                            <div class="card card-product card-plain">
-                                <div class="card-image">
-                                    <a href="#pablo">
-                                        <img src="../assets/img/examples/tom-ford.jpg" alt="" />
-                                    </a>
-                                </div>
-
-                                <div class="card-content">
-                                    <h4 class="card-title">
-                                        <h4 class="card-title">Dolce & Gabbana</h4>
-                                    </h4>
-                                    <p class="card-description">The structured shoulders and sleek detailing ensure a sharp
-                                        silhouette. Team it with a silk pocket square and leather loafers.</p>
-                                    <div class="footer">
-                                        <div class="price-container">
-                                            <span class="price price-new"> LKR 743</span>
-                                        </div>
-                                        <div class="stats">
-                                            <button type="button" rel="tooltip" title=""
-                                                    class="btn  btn-rose"
-                                                    data-original-title="Added to Cart">
-                                                Buy
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-
+                        </c:forEach>
                     </div>
                 </div>
             </div>
-            <!-- section -->
-            <br>
-            <div class="container">
-                <h2 class="section-title">Most Popular Genere</h2>
-
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="card card-background" style="background-image: url(../assets/img/examples/chris9.jpg)">
-                            <div class="card-content">
-                                <h6 class="category text-info">BlueRay Mart</h6>
-                                <a href="#pablo">
-                                    <h3 class="card-title">Animation</h3>
-                                </a>
-                                <p class="card-description">
-                                    Don't be scared of the truth because we need to restart the human foundation in truth
-                                    And I love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is...
-                                </p>
-                                <a href="#pablo" class="btn btn-primary btn-round">
-                                    <i class="material-icons">subject</i> More
-                                </a>
-                            </div>
-                        </div>
-                        <!-- end card -->
-                    </div>
-
-                    <div class="col-md-4">
-                        <div class="card card-background" style="background-image: url(../assets/img/examples/color3.jpg)">
-                            <div class="card-content">
-                                <h6 class="category text-info">BlueRay Mart</h6>
-                                <h3 class="card-title">Action</h3>
-                                <p class="card-description">
-                                    Don't be scared of the truth because we need to restart the human foundation in truth
-                                    And I love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is...
-                                </p>
-                                <a href="#pablo" class="btn btn-primary btn-round">
-                                    <i class="material-icons">subject</i> More
-                                </a>
-                            </div>
-                        </div>
-                        <!-- end card -->
-                    </div>
-
-                    <div class="col-md-4">
-                        <div class="card card-background" style="background-image: url(../assets/img/examples/chris1.jpg)">
-                            <div class="card-content">
-                                <h6 class="category text-info">BlueRay Mart</h6>
-                                <a href="#pablo">
-                                    <h3 class="card-title">Comdey</h3>
-                                </a>
-                                <p class="card-description">
-                                    Don't be scared of the truth because we need to restart the human foundation in truth
-                                    And I love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is...
-                                </p>
-                                <a href="#pablo" class="btn btn-primary btn-round">
-                                    <i class="material-icons">subject</i> Read
-                                </a>
-                            </div>
-                        </div>
-                        <!-- end card -->
-                    </div>
-
-                    <div class="col-md-6">
-                        <div class="card card-background" style="background-image: url(../assets/img/dg3.jpg)">
-                            <div class="card-content">
-                                <h6 class="category text-info">BlueRay Mart</h6>
-                                <a href="#pablo">
-                                    <h3 class="card-title">Sci-Fi</h3>
-                                </a>
-                                <p class="card-description">
-                                    Don't be scared of the truth because we need to restart the human foundation in truth
-                                    And I love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is...
-                                </p>
-                                <a href="#pablo" class="btn btn-primary btn-round">
-                                    <i class="material-icons">subject</i> Read
-                                </a>
-                            </div>
-                        </div>
-                        <!-- end card -->
-                    </div>
-
-                    <div class="col-md-6">
-                        <div class="card card-background" style="background-image: url(../assets/img/dg1.jpg)">
-                            <div class="card-content">
-                                <h6 class="category text-info">BlueRay Mart</h6>
-                                <a href="#pablo">
-                                    <h3 class="card-title">Drama</h3>
-                                </a>
-                                <p class="card-description">
-                                    Don't be scared of the truth because we need to restart the human foundation in truth
-                                    And I love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is...
-                                </p>
-                                <a href="#pablo" class="btn btn-primary btn-round">
-                                    <i class="material-icons">subject</i> read
-                                </a>
-                            </div>
-                        </div>
-                        <!-- end card -->
-                    </div>
-                </div>
-            </div>
-
         </div>
+        <!-- section -->
+        <br>
+        <div class="container">
+            <h2 class="section-title">Most Popular Genere</h2>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card card-background" style="background-image: url(../assets/img/examples/chris9.jpg)">
+                        <div class="card-content">
+                            <h6 class="category text-info">BlueRay Mart</h6>
+                            <a href="#pablo">
+                                <h3 class="card-title">Animation</h3>
+                            </a>
+                            <p class="card-description">
+                                Don't be scared of the truth because we need to restart the human foundation in truth
+                                And I love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is...
+                            </p>
+                            <a href="#pablo" class="btn btn-primary btn-round">
+                                <i class="material-icons">subject</i> More
+                            </a>
+                        </div>
+                    </div>
+                    <!-- end card -->
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card card-background" style="background-image: url(../assets/img/examples/color3.jpg)">
+                        <div class="card-content">
+                            <h6 class="category text-info">BlueRay Mart</h6>
+                            <h3 class="card-title">Action</h3>
+                            <p class="card-description">
+                                Don't be scared of the truth because we need to restart the human foundation in truth
+                                And I love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is...
+                            </p>
+                            <a href="#pablo" class="btn btn-primary btn-round">
+                                <i class="material-icons">subject</i> More
+                            </a>
+                        </div>
+                    </div>
+                    <!-- end card -->
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card card-background" style="background-image: url(../assets/img/examples/chris1.jpg)">
+                        <div class="card-content">
+                            <h6 class="category text-info">BlueRay Mart</h6>
+                            <a href="#pablo">
+                                <h3 class="card-title">Comdey</h3>
+                            </a>
+                            <p class="card-description">
+                                Don't be scared of the truth because we need to restart the human foundation in truth
+                                And I love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is...
+                            </p>
+                            <a href="#pablo" class="btn btn-primary btn-round">
+                                <i class="material-icons">subject</i> Read
+                            </a>
+                        </div>
+                    </div>
+                    <!-- end card -->
+                </div>
+
+                <div class="col-md-6">
+                    <div class="card card-background" style="background-image: url(../assets/img/dg3.jpg)">
+                        <div class="card-content">
+                            <h6 class="category text-info">BlueRay Mart</h6>
+                            <a href="#pablo">
+                                <h3 class="card-title">Sci-Fi</h3>
+                            </a>
+                            <p class="card-description">
+                                Don't be scared of the truth because we need to restart the human foundation in truth
+                                And I love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is...
+                            </p>
+                            <a href="#pablo" class="btn btn-primary btn-round">
+                                <i class="material-icons">subject</i> Read
+                            </a>
+                        </div>
+                    </div>
+                    <!-- end card -->
+                </div>
+
+                <div class="col-md-6">
+                    <div class="card card-background" style="background-image: url(../assets/img/dg1.jpg)">
+                        <div class="card-content">
+                            <h6 class="category text-info">BlueRay Mart</h6>
+                            <a href="#pablo">
+                                <h3 class="card-title">Drama</h3>
+                            </a>
+                            <p class="card-description">
+                                Don't be scared of the truth because we need to restart the human foundation in truth
+                                And I love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is...
+                            </p>
+                            <a href="#pablo" class="btn btn-primary btn-round">
+                                <i class="material-icons">subject</i> read
+                            </a>
+                        </div>
+                    </div>
+                    <!-- end card -->
+                </div>
+            </div>
+        </div>
+
     </div>
-    <!-- section -->
+</div>
+<!-- section -->
 
 </div>
 <!-- end-main-raised -->
