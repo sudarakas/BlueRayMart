@@ -89,7 +89,7 @@
                         <div class="title">
                             <h3>Inventory</h3>
                         </div>
-                        <div class="text-right"><a href="" class="btn btn-success">Add Movie</a></div>
+                        <div class="text-right"><a href="/admin/inventory/addmovie" class="btn btn-success">Add Movie</a></div>
                         <div class="row">
                             <div class="col-md-12">
                                 <h4>Movie Inventory</h4>

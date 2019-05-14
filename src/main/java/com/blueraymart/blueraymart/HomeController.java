@@ -70,7 +70,7 @@ public class HomeController {
         movie.setMoviePrice(562);
         movie.setMovieGenre("ANime");
         
-        model.addAttribute(movie);
+        model.addAttribute("movie",movie);
         return "addMovie";
     }
 }

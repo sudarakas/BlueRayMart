@@ -8,6 +8,8 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
+    <%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+    <%@taglib prefix="spring" uri="http://www.springframework.org/tags"%>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>BlueRay Mart - Buy Your Movies</title>
@@ -114,7 +116,7 @@
                                                 <span class="price"> LKR ${movie.moviePrice}</span>
                                             </div>
 
-                                            <a href="<spring:url value="/movieList/viewMovie/${movie.movieID}"/>">
+                                             <a href="<spring:url value="/movieList/viewMovie/${movie.movieID}"/>">
                                                <button class="btn btn-rose pull-right" rel="tooltip" title="Added to Cart" data-placement="top">
                                                     Buy Now
                                                 </button>
