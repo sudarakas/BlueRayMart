@@ -65,7 +65,7 @@ public class MovieDaoImp implements MovieDao {
     @Override
     public List<Movie> getLatestMovies() {
         Session session = sessionFactory.getCurrentSession();
-        org.hibernate.Query query = session.createQuery("FROM Movie ORDER BY MOVIEID DESC");
+        org.hibernate.Query query = session.createQuery("FROM Movie ORDER BY movieId DESC");
        
         query.setMaxResults(3);
         List<Movie> movies = query.list();

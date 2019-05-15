@@ -87,7 +87,7 @@
             <div class="section">
                 <div class="container">
                     <div class="col-md-10 col-md-offset-1">
-                    <form:form action="#" method="post" commandName="movie">
+                        <form:form action="${pageContext.request.contextPath}/admin/inventory/addmovie" method="post" commandName="movie">
                         <div class="form-group">
                             <label for="name">Movie Name</label>
                             <form:input path="movieName" type="text" value="" class="form-control" />
@@ -131,10 +131,6 @@
                             <form:input path="movieReleaseDate" type="date" value="" class="form-control" />
                         </div>
                         <div class="form-group">
-                            <label for="name">Studio</label>
-                            <form:input path="movieStudio" type="text" value="" class="form-control" />
-                        </div>
-                        <div class="form-group">
                             <label for="name">Movie Original Language</label>
                             <form:input path="movieOriginalLanguage" type="text" value="" class="form-control" />
                         </div>
@@ -152,7 +148,7 @@
                         </div>
                         <div class="form-group">
                             <label for="name">Description</label>
-                            <form:input path="movieIMDB" type="text" value="" class="form-control" />
+                            <form:textarea path="movieDescription" type="text" value="" class="form-control" rows="5" />
                         </div>
                         <div class="form-group">
                             <label for="name">Price</label>
@@ -171,6 +167,10 @@
                                 <form:option value="Expired" label="Expired"/>
                             </form:select>
                         </div>
+                        
+                            <input type="submit" class="btn btn-primary">
+                            <input type="reset" class="btn btn-danger">
+                        
                     </form:form>
                     </div>
                 </div>

@@ -19,7 +19,7 @@ public class Movie {
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private String movieID;
+    private String movieId;
     private String movieName;
     private String movieFormat;
     private String movieGenre;
@@ -35,12 +35,12 @@ public class Movie {
     private int movieUnitinStock;
     private String movieStatus;
 
-    public String getMovieID() {
-        return movieID;
+    public String getMovieId() {
+        return movieId;
     }
 
-    public void setMovieID(String movieID) {
-        this.movieID = movieID;
+    public void setMovieId(String movieId) {
+        this.movieId = movieId;
     }
     
     public String getMovieName() {

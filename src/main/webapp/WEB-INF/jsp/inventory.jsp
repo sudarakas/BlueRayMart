@@ -118,7 +118,7 @@
                                         <tbody>
                                             <c:forEach items="${movies}" var="movie">
                                             <tr>
-                                                <td>${movie.movieID}</td>
+                                                <td>${movie.movieId}</td>
                                                 <td>${movie.movieName}</td>
                                                 <td class="text-right">LKR ${movie.moviePrice}</td>
                                                 <td>${movie.movieGenre}</td>

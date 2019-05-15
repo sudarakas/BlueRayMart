@@ -113,7 +113,7 @@
                                                     <span class="price"> LKR ${movie.moviePrice}</span>
                                                 </div>
 
-                                                <a href="<spring:url value="/movieList/viewMovie/${movie.movieID}"/>">
+                                                <a href="<spring:url value="/movieList/viewMovie/${movie.movieId}"/>">
                                                     <button class="btn btn-rose pull-right" rel="tooltip" title="Added to Cart" data-placement="top">
                                                         Buy Now
                                                     </button>
