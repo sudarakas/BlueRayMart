@@ -8,6 +8,8 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
+    <%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+    <%@taglib prefix="spring" uri="http://www.springframework.org/tags"%>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Inventory - BlueRay Mart</title>
@@ -117,32 +119,32 @@
                                         </thead>
                                         <tbody>
                                             <c:forEach items="${movies}" var="movie">
-                                            <tr>
-                                                <td>${movie.movieId}</td>
-                                                <td>${movie.movieName}</td>
-                                                <td class="text-right">LKR ${movie.moviePrice}</td>
-                                                <td>${movie.movieGenre}</td>
-                                                <td>${movie.movieLanguage}</td>
-                                                <td>${movie.movieOriginalLanguage}</td>
-                                                <td>${movie.movieReleaseDate}</td>
-                                                <td>${movie.movieRunTime}</td>
-                                                <td>${movie.movieDirector}</td>
-                                                <td>${movie.movieFormat}</td>
-                                                <td>${movie.movieStudio}</td>
-                                                <td>${movie.movieUnitinStock}</td>
-                                                <td>${movie.movieStatus}</td>
-                                                <td class="td-actions text-right">
-                                                    <button type="button" rel="tooltip" class="btn btn-warning btn-round">
-                                                        <i class="material-icons">check</i>
-                                                    </button>
-                                                    <button type="button" rel="tooltip" class="btn btn-success btn-round">
-                                                        <i class="material-icons">edit</i>
-                                                    </button>
-                                                    <button type="button" rel="tooltip" class="btn btn-danger btn-round">
-                                                        <i class="material-icons">close</i>
-                                                    </button>
-                                                </td>
-                                            </tr>
+                                                <tr>
+                                                    <td>${movie.movieId}</td>
+                                                    <td>${movie.movieName}</td>
+                                                    <td class="text-right">LKR ${movie.moviePrice}</td>
+                                                    <td>${movie.movieGenre}</td>
+                                                    <td>${movie.movieLanguage}</td>
+                                                    <td>${movie.movieOriginalLanguage}</td>
+                                                    <td>${movie.movieReleaseDate}</td>
+                                                    <td>${movie.movieRunTime}</td>
+                                                    <td>${movie.movieDirector}</td>
+                                                    <td>${movie.movieFormat}</td>
+                                                    <td>${movie.movieStudio}</td>
+                                                    <td>${movie.movieUnitinStock}</td>
+                                                    <td>${movie.movieStatus}</td>
+                                                    <td class="td-actions text-right">
+                                                        <button type="button" rel="tooltip" class="btn btn-success btn-round" onclick="window.open('<spring:url value="/movieList/viewMovie/${movie.movieId}"/>')">
+                                                            <i class='material-icons'> call_made </i>
+                                                        </button>
+                                                        <button type="button" rel="tooltip" class="btn btn-link btn-round">
+                                                            <i class="material-icons">edit</i>
+                                                        </button>
+                                                        <button type="button" rel="tooltip" class="btn btn-danger btn-round" onclick="window.open('<spring:url value="/admin/inventory/deleteMovie/${movie.movieId}"/>')">
+                                                            <i class="material-icons">close</i>
+                                                        </button>
+                                                    </td>
+                                                </tr>
                                             </c:forEach>
                                         </tbody>
                                     </table>

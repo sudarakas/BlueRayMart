@@ -7,8 +7,12 @@ package com.blueraymart.blueraymart;
 
 import com.blueraymart.dao.MovieDao;
 import com.blueraymart.model.Movie;
+import java.io.File;
 import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.List;
+import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,6 +20,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.multipart.MultipartFile;
 
 /**
  *
@@ -23,7 +28,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
  */
 @Controller
 public class HomeController {
-
+    
+    private Path path;
+    
     @Autowired
     private MovieDao movieDao;
 
@@ -40,13 +47,13 @@ public class HomeController {
         List<Movie> movies = movieDao.getAllMovies();
         model.addAttribute("movies", movies);
 
-        return "movieList";
+        return "home";
     }
     
 
-    @RequestMapping("/movieList/viewMovie/{movieID}")
-    public String viewMovie(@PathVariable String movieID, Model model) throws IOException {
-        Movie movie = movieDao.getMovieById(movieID);
+    @RequestMapping("/movieList/viewMovie/{movieId}")
+    public String viewMovie(@PathVariable String movieId, Model model) throws IOException {
+        Movie movie = movieDao.getMovieById(movieId);
         model.addAttribute(movie);
         return "viewMovie";
     }
@@ -77,9 +84,29 @@ public class HomeController {
     }
     
     @RequestMapping(value="/admin/inventory/addmovie", method = RequestMethod.POST)
-    public String addMoviePost(@ModelAttribute("movie") Movie movie){
+    public String addMoviePost(@ModelAttribute("movie") Movie movie, HttpServletRequest request){
         movieDao.addMovie(movie);
-  
+        MultipartFile movieImage = movie.getMovieImage();
+        String rootDirectory = request.getSession().getServletContext().getRealPath("/");
+        path = Paths.get(rootDirectory + "\\WEB-INF\\resources\\images\\" + movie.getMovieId() + ".png");
+        
+        if(movieImage != null && !movieImage.isEmpty()){
+            try {
+                movieImage.transferTo(new File(path.toString()));
+            } catch (Exception e) {
+                e.printStackTrace();
+                throw new RuntimeException("Oops! Something wrong with image upload!", e);
+            }
+        }
+        
+        return "redirect:/admin/inventory";
+    }
+    
+    @RequestMapping("/admin/inventory/deleteMovie/{movieId}")
+    public String deleteMovie(@PathVariable String movieId, Model model){
+        
+        movieDao.deleteMovie(movieId);
+        
         return "redirect:/admin/inventory";
     }
 }

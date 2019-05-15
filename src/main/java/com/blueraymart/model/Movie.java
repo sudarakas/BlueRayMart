@@ -9,6 +9,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Transient;
+import org.springframework.web.multipart.MultipartFile;
 
 /**
  *
@@ -34,6 +36,9 @@ public class Movie {
     private double moviePrice;
     private int movieUnitinStock;
     private String movieStatus;
+    
+    @Transient
+    private MultipartFile movieImage;
 
     public String getMovieId() {
         return movieId;
@@ -124,7 +129,6 @@ public class Movie {
     }
 
     public String getMovieDescription() {
-        this.movieDescription = movieDescription.substring(0, 10);
         return movieDescription;
     }
 
@@ -159,6 +163,16 @@ public class Movie {
     public String getMovieRunTime(int i) {
         return movieRunTime;
     }
+
+    public MultipartFile getMovieImage() {
+        return movieImage;
+    }
+
+    public void setMovieImage(MultipartFile movieImage) {
+        this.movieImage = movieImage;
+    }
+    
+    
     
     
 }

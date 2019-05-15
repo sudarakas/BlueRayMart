@@ -87,91 +87,108 @@
             <div class="section">
                 <div class="container">
                     <div class="col-md-10 col-md-offset-1">
-                        <form:form action="${pageContext.request.contextPath}/admin/inventory/addmovie" method="post" commandName="movie">
-                        <div class="form-group">
-                            <label for="name">Movie Name</label>
-                            <form:input path="movieName" type="text" value="" class="form-control" />
-                        </div>
-                        <div class="form-group">
-                            <label for="name">Movie Genre</label>
-                            <form:select path="movieGenre" class="selectpicker" data-style="select-with-transition" title="Choose Movie Genre">
-                                <form:option value="Action" label="Action"/>
-                                <form:option value="Adventure" label="Adventure"/>
-                                <form:option value="Animation" label="Animation"/>
-                                <form:option value="Comedy" label="Comedy"/>
-                                <form:option value="Crime" label="Crime"/>
-                                <form:option value="Drama" label="Drama"/>
-                                <form:option value="Fantasy" label="Fantasy"/>
-                                <form:option value="Historical" label="Historical"/>
-                                <form:option value="Horror" label="Horror"/>
-                                <form:option value="Mystery" label="Mystery"/>
-                                <form:option value="Philosophical" label="Philosophical"/>
-                                <form:option value="Romance" label="Romance"/>
-                            </form:select>
-                        </div>
-                        <div class="form-group">
-                            <label for="name">Movie Format</label>
-                            <form:select path="movieFormat" class="selectpicker" data-style="select-with-transition" title="Choose Movie Format">
-                                <form:option value="BlueRay" label="BlueRay"/>
-                                <form:option value="DVD" label="DVD"/>
-                                <form:option value="CD" label="CD"/>
-                                <form:option value="HD DVD" label="HD DVD"/>
-                            </form:select>
-                        </div>
-                        <div class="form-group">
-                            <label for="name">Director</label>
-                            <form:input path="movieDirector" type="text" value="" class="form-control" />
-                        </div>
-                        <div class="form-group">
-                            <label for="name">Studio</label>
-                            <form:input path="movieStudio" type="text" value="" class="form-control" />
-                        </div>
-                        <div class="form-group">
-                            <label for="name">Release Date</label>
-                            <form:input path="movieReleaseDate" type="date" value="" class="form-control" />
-                        </div>
-                        <div class="form-group">
-                            <label for="name">Movie Original Language</label>
-                            <form:input path="movieOriginalLanguage" type="text" value="" class="form-control" />
-                        </div>
-                        <div class="form-group">
-                            <label for="name">Movie Language</label>
-                            <form:input path="movieLanguage" type="text" value="" class="form-control" />
-                        </div>
-                        <div class="form-group">
-                            <label for="name">Run Time</label>
-                            <form:input path="movieRunTime" type="text" value="" class="form-control" />
-                        </div>
-                        <div class="form-group">
-                            <label for="name">IMDB URL</label>
-                            <form:input path="movieIMDB" type="text" value="" class="form-control" />
-                        </div>
-                        <div class="form-group">
-                            <label for="name">Description</label>
-                            <form:textarea path="movieDescription" type="text" value="" class="form-control" rows="5" />
-                        </div>
-                        <div class="form-group">
-                            <label for="name">Price</label>
-                            <form:input path="moviePrice" type="text" value="" class="form-control" />
-                        </div>
-                        <div class="form-group">
-                            <label for="name">Unit in Stock</label>
-                            <form:input path="movieUnitinStock" type="number" value="" class="form-control" />
-                        </div>
-                        <div class="form-group">
-                            <label for="name">Status</label>
-                            <form:select path="movieStatus" class="selectpicker" data-style="select-with-transition" title="Choose Movie Status">
-                                <form:option value="Available" label="Available"/>  
-                                <form:option value="Out of Stock" label="Out of Stock"/>
-                                <form:option value="Coming Soon" label="Coming Soon"/>
-                                <form:option value="Expired" label="Expired"/>
-                            </form:select>
-                        </div>
-                        
+                        <form:form action="${pageContext.request.contextPath}/admin/inventory/addmovie" method="post" commandName="movie" enctype="multipart/form-data">
+                            <div class="form-group">
+                                <label for="name">Movie Name</label>
+                                <form:input path="movieName" type="text" value="" class="form-control" />
+                            </div>
+                            <div class="form-group">
+                                <label for="name">Movie Genre</label>
+                                <form:select path="movieGenre" class="selectpicker" data-style="select-with-transition" title="Choose Movie Genre">
+                                    <form:option value="Action" label="Action"/>
+                                    <form:option value="Adventure" label="Adventure"/>
+                                    <form:option value="Animation" label="Animation"/>
+                                    <form:option value="Comedy" label="Comedy"/>
+                                    <form:option value="Crime" label="Crime"/>
+                                    <form:option value="Drama" label="Drama"/>
+                                    <form:option value="Fantasy" label="Fantasy"/>
+                                    <form:option value="Historical" label="Historical"/>
+                                    <form:option value="Horror" label="Horror"/>
+                                    <form:option value="Mystery" label="Mystery"/>
+                                    <form:option value="Philosophical" label="Philosophical"/>
+                                    <form:option value="Romance" label="Romance"/>
+                                </form:select>
+                            </div>
+                            <div class="form-group">
+                                <label for="name">Movie Format</label>
+                                <form:select path="movieFormat" class="selectpicker" data-style="select-with-transition" title="Choose Movie Format">
+                                    <form:option value="BlueRay" label="BlueRay"/>
+                                    <form:option value="DVD" label="DVD"/>
+                                    <form:option value="CD" label="CD"/>
+                                    <form:option value="HD DVD" label="HD DVD"/>
+                                </form:select>
+                            </div>
+                            <div class="form-group">
+                                <label for="name">Director</label>
+                                <form:input path="movieDirector" type="text" value="" class="form-control" />
+                            </div>
+                            <div class="form-group">
+                                <label for="name">Studio</label>
+                                <form:input path="movieStudio" type="text" value="" class="form-control" />
+                            </div>
+                            <div class="form-group">
+                                <label for="name">Release Date</label>
+                                <form:input path="movieReleaseDate" type="date" value="" class="form-control" />
+                            </div>
+                            <div class="form-group">
+                                <label for="name">Movie Original Language</label>
+                                <form:input path="movieOriginalLanguage" type="text" value="" class="form-control" />
+                            </div>
+                            <div class="form-group">
+                                <label for="name">Movie Language</label>
+                                <form:input path="movieLanguage" type="text" value="" class="form-control" />
+                            </div>
+                            <div class="form-group">
+                                <label for="name">Run Time</label>
+                                <form:input path="movieRunTime" type="text" value="" class="form-control" />
+                            </div>
+                            <div class="form-group">
+                                <label for="name">IMDB URL</label>
+                                <form:input path="movieIMDB" type="text" value="" class="form-control" />
+                            </div>
+                            <div class="form-group">
+                                <label for="name">Description</label>
+                                <form:textarea path="movieDescription" type="text" value="" class="form-control" rows="5" />
+                            </div>
+                            <div class="form-group">
+                                <label for="name">Price</label>
+                                <form:input path="moviePrice" type="text" value="" class="form-control" />
+                            </div>
+                            <div class="form-group">
+                                <label for="name">Unit in Stock</label>
+                                <form:input path="movieUnitinStock" type="number" value="" class="form-control" />
+                            </div>
+                            <div class="form-group">
+                                <label for="name">Status</label>
+                                <form:select path="movieStatus" class="selectpicker" data-style="select-with-transition" title="Choose Movie Status">
+                                    <form:option value="Available" label="Available"/>  
+                                    <form:option value="Out of Stock" label="Out of Stock"/>
+                                    <form:option value="Coming Soon" label="Coming Soon"/>
+                                    <form:option value="Expired" label="Expired"/>
+                                </form:select>
+                            </div>
+                            <div class="form-group">
+
+                                <h4><small>Movie Cover</small></h4>
+                                <div class="fileinput fileinput-new text-center" data-provides="fileinput">
+                                    <div class="fileinput-new thumbnail img-raised">
+<!--                                        <img src="assets/img/image_placeholder.jpg" alt="...">-->
+                                    </div>
+                                    <div class="fileinput-preview fileinput-exists thumbnail img-raised"></div>
+                                    <div>
+                                        <span class="btn btn-raised btn-round btn-default btn-file">
+                                            <span class="fileinput-new">Select image</span>
+                                            <span class="fileinput-exists">Change</span>
+                                            <form:input path="movieImage" type="file" value="" class="form-control" />
+                                        </span>
+                                        <a href="#pablo" class="btn btn-danger btn-round fileinput-exists" data-dismiss="fileinput"><i class="fa fa-times"></i> Remove</a>
+                                    </div>
+                                </div>
+                            </div>
                             <input type="submit" class="btn btn-primary">
                             <input type="reset" class="btn btn-danger">
-                        
-                    </form:form>
+
+                        </form:form>
                     </div>
                 </div>
             </div>
