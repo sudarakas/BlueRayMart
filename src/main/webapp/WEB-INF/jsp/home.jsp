@@ -71,7 +71,7 @@
         </nav>
 
         <div class="page-header header-filter header-small" data-parallax="true"
-             style="background-image: url('../assets/img/examples/ecommerce-tips2.jpg');">
+             style="background-image: url('/resources/images/cover-<%= (int) (Math.random() * 5) %>.jpg');">
             <div class="container">
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
@@ -97,7 +97,7 @@
                                 <div class="card card-product card-plain no-shadow" data-colored-shadow="false">
                                     <div class="card-image">
                                         <a href="#">
-                                            <img src="https://dummyimage.com/600x400/000/fff" alt="..."/>
+                                            <img src="<c:url value="/resources/images/${movie.movieId}.png"/>" alt="..." style="object-fit: cover; width: 300px;height: 320px;"/>
                                         </a>
                                     </div>
                                     <div class="card-content">

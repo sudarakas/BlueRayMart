@@ -28,41 +28,10 @@
                     <div class="col-md-6 col-sm-6">
 
                         <div class="tab-content">
-                            <div class="tab-pane" id="product-page1">
-                                <img src="../assets/img/examples/product1.jpg"/>
-                            </div>
                             <div class="tab-pane active" id="product-page2">
-                                <img src="../assets/img/examples/product2.jpg"/>
-                            </div>
-                            <div class="tab-pane" id="product-page3">
-                                <img src="../assets/img/examples/product3.jpg"/>
-                            </div>
-                            <div class="tab-pane" id="product-page4">
-                                <img src="../assets/img/examples/product4.jpg"/>
+                                <img src="<c:url value="/resources/images/${movie.movieId}.png"/>" alt="..."/>
                             </div>
                         </div>
-                        <ul class="nav flexi-nav" role="tablist" id="flexiselDemo1">
-                            <li>
-                                <a href="#product-page1" role="tab" data-toggle="tab" aria-expanded="false">
-                                    <img src="../assets/img/examples/product1.jpg"/>
-                                </a>
-                            </li>
-                            <li class="active">
-                                <a href="#product-page2" role="tab" data-toggle="tab" aria-expanded="false">
-                                    <img src="../assets/img/examples/product2.jpg"/>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#product-page3" role="tab" data-toggle="tab" aria-expanded="false">
-                                    <img src="../assets/img/examples/product3.jpg"/>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#product-page4" role="tab" data-toggle="tab" aria-expanded="true">
-                                    <img src="../assets/img/examples/product4.jpg"/>
-                                </a>
-                            </li>
-                        </ul>
                     </div>
                     <div class="col-md-6 col-sm-6">
                         <h2 class="title"> ${movie.movieName} </h2>
@@ -101,7 +70,7 @@
                                             <strong>Studio:  </strong> ${movie.movieStudio} <br>
                                             <strong>Release Date:  </strong> ${movie.movieReleaseDate} <br>
                                             <strong>Original Language:  </strong> ${movie.movieRunTime} <br>
-                                            <strong>IMDB:  </strong> ${movie.movieIMDB} <br>
+                                            <strong>IMDB:  </strong> <a href="${movie.movieIMDB}" target="_blank">${movie.movieIMDB}</a>  <br>
                                         </div>
                                     </div>
                                 </div>

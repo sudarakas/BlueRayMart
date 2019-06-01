@@ -9,6 +9,7 @@ import com.blueraymart.dao.MovieDao;
 import com.blueraymart.model.Movie;
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
@@ -103,7 +104,17 @@ public class HomeController {
     }
     
     @RequestMapping("/admin/inventory/deleteMovie/{movieId}")
-    public String deleteMovie(@PathVariable String movieId, Model model){
+    public String deleteMovie(@PathVariable String movieId, Model model, HttpServletRequest request){
+        String rootDirectory = request.getSession().getServletContext().getRealPath("/");
+        path = Paths.get(rootDirectory + "\\WEB-INF\\resources\\images\\" + movieId + ".png");
+        
+        if(Files.exists(path)){
+            try {
+                Files.delete(path);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
         
         movieDao.deleteMovie(movieId);
         

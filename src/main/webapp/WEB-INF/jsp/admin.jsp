@@ -33,7 +33,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="">BlueRay Mart</a>
+                    <a class="navbar-brand" href="/">BlueRay Mart</a>
                 </div>
 
                 <div class="collapse navbar-collapse">
