@@ -71,7 +71,7 @@
         </nav>
 
         <div class="page-header header-filter header-small" data-parallax="true"
-             style="background-image: url('../assets/img/examples/ecommerce-tips2.jpg');">
+             style="background-image: url('/resources/images/cover-<%= (int) (Math.random() * 5) %>.jpg');">
             <div class="container">
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">

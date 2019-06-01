@@ -11,7 +11,7 @@
     <%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
     <%@include file="/WEB-INF/jsp/include/viewHeader.jsp" %>
 
-    <div class="page-header header-filter" data-parallax="true" filter-color="rose" style="background-image: url('../assets/img/bg6.jpg');">
+    <div class="page-header header-filter" data-parallax="true" filter-color="rose" style="background-image: url('/resources/images/cover-<%= (int) (Math.random() * 5) %>.jpg');">
         <div class="container">
             <div class="row title-row">
                 <div class="col-md-4 col-md-offset-8">
