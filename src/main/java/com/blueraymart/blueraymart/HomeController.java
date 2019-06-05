@@ -76,10 +76,6 @@ public class HomeController {
     public String addMovie(Model model) {
         Movie movie = new Movie();
         
-        movie.setMovieDirector("Nano");
-        movie.setMoviePrice(562);
-        movie.setMovieGenre("ANime");
-        
         model.addAttribute("movie",movie);
         return "addMovie";
     }
@@ -117,6 +113,36 @@ public class HomeController {
         }
         
         movieDao.deleteMovie(movieId);
+        
+        return "redirect:/admin/inventory";
+    }
+    
+    @RequestMapping("/admin/inventory/editMovie/{movieId}")
+    public String editMovie(@PathVariable String movieId,Model model){
+        
+        Movie movie = movieDao.getMovieById(movieId);
+        model.addAttribute(movie);
+        
+        return "editMovie";
+    }
+    
+    @RequestMapping(value = "admin/inventory/editMovie", method = RequestMethod.POST)
+    public String editMovie(@ModelAttribute Movie movie, Model model, HttpServletRequest request){
+        
+        MultipartFile movieImage = movie.getMovieImage();
+        String rootDirectory = request.getSession().getServletContext().getRealPath("/");
+        path = Paths.get(rootDirectory + "\\WEB-INF\\resources\\images\\" + movie.getMovieId() + ".png");
+        
+        if(movieImage != null && !movieImage.isEmpty()){
+            try {
+                movieImage.transferTo(new File(path.toString()));
+            } catch (Exception e) {
+                e.printStackTrace();
+                throw new RuntimeException("Oops! Something wrong with image upload!", e);
+            }
+        }
+        
+        movieDao.editMovie(movie);
         
         return "redirect:/admin/inventory";
     }

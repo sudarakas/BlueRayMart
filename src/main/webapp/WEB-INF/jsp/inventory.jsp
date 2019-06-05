@@ -137,7 +137,7 @@
                                                         <button type="button" rel="tooltip" class="btn btn-success btn-round" onclick="window.open('<spring:url value="/movieList/viewMovie/${movie.movieId}"/>')">
                                                             <i class='material-icons'> call_made </i>
                                                         </button>
-                                                        <button type="button" rel="tooltip" class="btn btn-link btn-round">
+                                                        <button type="button" rel="tooltip" class="btn btn-link btn-round" onclick="window.open('<spring:url value="/admin/inventory/editMovie/${movie.movieId}"/>')">
                                                             <i class="material-icons">edit</i>
                                                         </button>
                                                         <button type="button" rel="tooltip" class="btn btn-danger btn-round" onclick="window.open('<spring:url value="/admin/inventory/deleteMovie/${movie.movieId}"/>')">

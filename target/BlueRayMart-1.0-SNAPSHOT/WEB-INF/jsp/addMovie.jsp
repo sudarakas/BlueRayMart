@@ -277,7 +277,7 @@
             <!--   Core JS Files   -->
             <script src="<c:url value="/resources/js/jquery.min.js" />" type="text/javascript"></script>
             <script src="<c:url value="/resources/js/bootstrap.min.js"/>" type="text/javascript"></script>
-            <script src="<c:url value="/resources/js/material.min.js"/>"</script>
+            <script src="<c:url value="/resources/js/material.min.js"/>"></script>
 
 
             <script src="<c:url value="/resources/js/moment.min.js"/>"></script>
@@ -286,14 +286,8 @@
             <script src="<c:url value="/resources/js/bootstrap-selectpicker.js"/>" type="text/javascript"></script>
             <script src="<c:url value="/resources/js/bootstrap-tagsinput.js"/>"></script>
             <script src="<c:url value="/resources/js/jasny-bootstrap.min.js"/>"></script>
-            <script  type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
             <script src="<c:url value="/resources/js/material-kit.js?v=1.2.1"/>" type="text/javascript"/></script>
-        <script type="text/javascript">
-                            $().ready(function () {
-
-                                materialKitDemo.initContactUs2Map();
-                            });
-        </script>
+        
 </body>
 
 </html>

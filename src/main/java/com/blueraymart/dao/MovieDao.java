@@ -15,6 +15,7 @@ import java.util.List;
 public interface MovieDao {
     
     void addMovie(Movie movie);
+    void editMovie(Movie movie);
     void deleteMovie(String Id);
     Movie getMovieById(String Id);
     List<Movie> getAllMovies();

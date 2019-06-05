@@ -33,6 +33,13 @@ public class MovieDaoImp implements MovieDao {
         session.saveOrUpdate(movie);
         session.flush();
     }
+    
+    @Override
+    public void editMovie(Movie movie) {
+        Session session = sessionFactory.getCurrentSession();
+        session.saveOrUpdate(movie);
+        session.flush();
+    }
 
     @Override
     public void deleteMovie(String Id) {
