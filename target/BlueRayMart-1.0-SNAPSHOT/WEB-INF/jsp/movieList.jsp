@@ -138,17 +138,18 @@
                 </footer>
                 <div class="container">
                     <div class="col-md-12">
+                        <c:if test="${movies.size() > 0}">
                         <div class="row">
                             <c:forEach items="${movies}" var="movie">
                                 <div class="col-md-4">
                                     <div class="card card-product card-plain no-shadow" data-colored-shadow="false">
                                         <div class="card-image">
-                                            <a href="#">
+                                            <a href="<spring:url value="/movieList/viewMovie/${movie.movieId}"/>">
                                                 <img src="<c:url value="/resources/images/${movie.movieId}.png"/>" alt="..."/>
                                             </a>
                                         </div>
                                         <div class="card-content">
-                                            <a href="#">
+                                            <a href="<spring:url value="/movieList/viewMovie/${movie.movieId}"/>">
                                                 <h4 class="card-title">${movie.movieName}</h4>
                                             </a>
                                             <p class="description">
@@ -174,14 +175,19 @@
                                 </div>
                             </c:forEach>
                         </div>
+                        </c:if>
+                        <c:if test="${movies.size() <= 0}">
+                            <div class="tim-typo" style="margin: 20% 0 20% 0">
+	                        <h2 class="title text-center">Sorry! No Result Found.</h2>
+	                    </div>
+                        </c:if> 
                     </div>
                 </div>
             </div>
         </div>
         <!-- end-main-raised -->
 
-        <div class="subscribe-line subscribe-line-image" data-parallax="true"
-             style="background-image: url('../assets/img/examples/ecommerce-header.jpg');">
+        <div class="subscribe-line subscribe-line-image" data-parallax="true">
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 col-md-offset-3">
