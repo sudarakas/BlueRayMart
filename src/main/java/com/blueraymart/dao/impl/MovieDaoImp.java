@@ -80,5 +80,15 @@ public class MovieDaoImp implements MovieDao {
 
         return movies;
     }
+    
+    @Override
+    public List<Movie> getMoviesByGenere(String Genere) {
+        Session session = sessionFactory.getCurrentSession();
+        org.hibernate.Query query = session.createQuery("FROM Movie WHERE movieGenre='"+Genere+"'");
+        List<Movie> movies = query.list();
+        session.flush();
+
+        return movies;
+    }
 
 }

@@ -48,7 +48,7 @@ public class HomeController {
         List<Movie> movies = movieDao.getAllMovies();
         model.addAttribute("movies", movies);
 
-        return "home";
+        return "movieList";
     }
     
 
@@ -57,6 +57,14 @@ public class HomeController {
         Movie movie = movieDao.getMovieById(movieId);
         model.addAttribute(movie);
         return "viewMovie";
+    }
+    
+    @RequestMapping("/movieList/{movieGenre}")
+    public String getMoviesByGenere(@PathVariable String movieGenre, Model model) throws IOException {
+        List<Movie> movies = movieDao.getMoviesByGenere(movieGenre);
+        model.addAttribute("movies", movies);
+        
+        return "movieList";
     }
 
     @RequestMapping("/admin")

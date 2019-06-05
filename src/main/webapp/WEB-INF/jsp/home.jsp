@@ -56,6 +56,12 @@
                             </a>
                         </li>
                         <li>
+                            <a href="<c:url value="/admin"/>">
+                                <i class='material-icons'>person</i> Admin Panel
+                            </a>
+                        </li>
+
+                        <li>
                             <a href="/">
                                 Sign In
                             </a>
@@ -71,7 +77,7 @@
         </nav>
 
         <div class="page-header header-filter header-small" data-parallax="true"
-             style="background-image: url('/resources/images/cover-<%= (int) (Math.random() * 5) %>.jpg');">
+             style="background-image: url('/resources/images/cover-<%= (int) (Math.random() * 5)%>.jpg');">
             <div class="container">
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
@@ -116,8 +122,8 @@
                                                 <span class="price"> LKR ${movie.moviePrice}</span>
                                             </div>
 
-                                             <a href="<spring:url value="/movieList/viewMovie/${movie.movieId}"/>">
-                                               <button class="btn btn-rose pull-right" rel="tooltip" title="Added to Cart" data-placement="top">
+                                            <a href="<spring:url value="/movieList/viewMovie/${movie.movieId}"/>">
+                                                <button class="btn btn-rose pull-right" rel="tooltip" title="Added to Cart" data-placement="top">
                                                     Buy Now
                                                 </button>
                                             </a>
@@ -335,8 +341,7 @@
 </div>
 <!-- section -->
 
-<div class="subscribe-line subscribe-line-image" data-parallax="true"
-     style="background-image: url('../assets/img/examples/ecommerce-header.jpg');">
+<div class="subscribe-line subscribe-line-image">
     <div class="container">
         <div class="row">
             <div class="col-md-6 col-md-offset-3">

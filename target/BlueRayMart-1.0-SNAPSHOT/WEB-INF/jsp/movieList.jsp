@@ -71,7 +71,7 @@
         </nav>
 
         <div class="page-header header-filter header-small" data-parallax="true"
-             style="background-image: url('../assets/img/examples/ecommerce-tips2.jpg');">
+             style="background-image: url('/resources/images/cover-<%= (int) (Math.random() * 5)%>.jpg');">
             <div class="container">
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
@@ -86,6 +86,56 @@
 
         <div class="main main-raised">
             <div class="section">
+                <footer>
+                    <ul class="pull-center">
+                        <li>
+                            <a href="#pablo">
+                                Action
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#pablo">
+                                Action
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#pablo">
+                                Animation
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#pablo">
+                                Comedy
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#pablo">
+                                Crime
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#pablo">
+                                Drama
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#pablo">
+                                Fantasy
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#pablo">
+                                Historical
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#pablo">
+                                Horror
+                            </a>
+                        </li>
+                    </ul>
+
+                </footer>
                 <div class="container">
                     <div class="col-md-12">
                         <div class="row">
@@ -94,7 +144,7 @@
                                     <div class="card card-product card-plain no-shadow" data-colored-shadow="false">
                                         <div class="card-image">
                                             <a href="#">
-                                                <img src="https://dummyimage.com/600x400/000/fff" alt="..."/>
+                                                <img src="<c:url value="/resources/images/${movie.movieId}.png"/>" alt="..."/>
                                             </a>
                                         </div>
                                         <div class="card-content">
@@ -129,103 +179,6 @@
             </div>
         </div>
         <!-- end-main-raised -->
-
-        <!--        <div class="section section-blog">
-                    <div class="container">
-                        <h2 class="section-title">Upcoming Movies</h2>
-                        <div class="row">
-                            <div class="col-md-4">
-        
-                                <div class="card card-blog">
-                                    <div class="card-image">
-                                        <a href="#pablo">
-                                            <img src="../assets/img/dg6.jpg" alt="">
-                                        </a>
-                                        <div class="colored-shadow"
-                                             style="background-image: url(&quot;assets/img/examples/color1.jpg&quot;); opacity: 1;">
-                                        </div>
-                                        <div class="ripple-container"></div>
-                                    </div>
-                                    <div class="card-content">
-                                        <h6 class="category text-rose">Trends</h6>
-                                        <h4 class="card-title">
-                                            <a href="#pablo">Learn how to wear your scarf with a floral print shirt</a>
-                                        </h4>
-                                        <p class="card-description">
-                                            Don't be scared of the truth because we need to restart the human foundation in truth
-                                            And I love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is...
-                                        </p>
-                                        <a href="#pablo" class="btn btn-rose btn-round">
-                                            <i class="material-icons">subject</i> More
-                                        </a>
-                                    </div>
-        
-                                </div>
-        
-                            </div>
-        
-                            <div class="col-md-4">
-        
-                                <div class="card card-blog">
-                                    <div class="card-image">
-                                        <a href="#pablo">
-                                            <img src="../assets/img/dg10.jpg" alt="">
-                                        </a>
-                                        <div class="colored-shadow"
-                                             style="background-image: url(&quot;assets/img/examples/color1.jpg&quot;); opacity: 1;">
-                                        </div>
-                                        <div class="ripple-container"></div>
-                                    </div>
-                                    <div class="card-content">
-                                        <h6 class="category text-rose">Fashion week</h6>
-                                        <h4 class="card-title">
-                                            <a href="#pablo">Katy Perry was wearing a Dolce & Gabanna arc dress</a>
-                                        </h4>
-                                        <p class="card-description">
-                                            Don't be scared of the truth because we need to restart the human foundation in truth
-                                            And I love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is...
-                                        </p>
-                                        <a href="#pablo" class="btn btn-rose btn-round">
-                                            <i class="material-icons">subject</i> More
-                                        </a>
-                                    </div>
-                                </div>
-        
-                            </div>
-        
-                            <div class="col-md-4">
-        
-                                <div class="card card-blog">
-                                    <div class="card-image">
-                                        <a href="#pablo">
-                                            <img src="../assets/img/dg9.jpg" alt="">
-                                        </a>
-                                        <div class="colored-shadow"
-                                             style="background-image: url(&quot;assets/img/examples/color1.jpg&quot;); opacity: 1;">
-                                        </div>
-                                        <div class="ripple-container"></div>
-                                    </div>
-                                    <div class="card-content">
-                                        <h6 class="category text-rose">Fashion week</h6>
-                                        <h4 class="card-title">
-                                            <a href="#pablo">Check the latest fashion events and which are the trends</a>
-                                        </h4>
-                                        <p class="card-description">
-                                            Don't be scared of the truth because we need to restart the human foundation in truth
-                                            And I love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is...
-                                        </p>
-                                        <a href="#pablo" class="btn btn-rose btn-round">
-                                            <i class="material-icons">subject</i> More
-                                        </a>
-                                    </div>
-                                </div>
-        
-                            </div>
-        
-                        </div>
-                    </div>
-                </div>-->
-        <!-- section -->
 
         <div class="subscribe-line subscribe-line-image" data-parallax="true"
              style="background-image: url('../assets/img/examples/ecommerce-header.jpg');">
