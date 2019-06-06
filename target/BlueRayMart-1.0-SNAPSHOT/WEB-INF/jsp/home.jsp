@@ -150,10 +150,9 @@
                                 <h3 class="card-title">Animation</h3>
                             </a>
                             <p class="card-description">
-                                Don't be scared of the truth because we need to restart the human foundation in truth
-                                And I love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is...
+                                Animated Films are ones in which individual drawings, paintings, or illustrations are photographed frame by frame (stop-frame cinematography). 
                             </p>
-                            <a href="#pablo" class="btn btn-primary btn-round">
+                            <a href="/movieList/Animation" class="btn btn-primary btn-round">
                                 <i class="material-icons">subject</i> More
                             </a>
                         </div>
@@ -162,15 +161,16 @@
                 </div>
 
                 <div class="col-md-4">
-                    <div class="card card-background" style="background-image: url(../assets/img/examples/color3.jpg)">
+                    <div class="card card-background" style="background-image: url(/resources/images/action.jpg)">
                         <div class="card-content">
                             <h6 class="category text-info">BlueRay Mart</h6>
-                            <h3 class="card-title">Action</h3>
+                            <a href="#pablo">
+                                <h3 class="card-title">Action</h3>
+                            </a>
                             <p class="card-description">
-                                Don't be scared of the truth because we need to restart the human foundation in truth
-                                And I love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is...
+                                Action film is a film genre in which the protagonist or protagonists are thrust into a series of challenges that typically include violence.
                             </p>
-                            <a href="#pablo" class="btn btn-primary btn-round">
+                            <a href="/movieList/Action" class="btn btn-primary btn-round">
                                 <i class="material-icons">subject</i> More
                             </a>
                         </div>
@@ -179,18 +179,17 @@
                 </div>
 
                 <div class="col-md-4">
-                    <div class="card card-background" style="background-image: url(../assets/img/examples/chris1.jpg)">
+                    <div class="card card-background" style="background-image: url(/resources/images/animation.jpg)">
                         <div class="card-content">
                             <h6 class="category text-info">BlueRay Mart</h6>
                             <a href="#pablo">
-                                <h3 class="card-title">Comdey</h3>
+                                <h3 class="card-title">Comedy</h3>
                             </a>
                             <p class="card-description">
-                                Don't be scared of the truth because we need to restart the human foundation in truth
-                                And I love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is...
+                                Comedy is a genre of film in which the main emphasis is on humour. These films are designed to make the audience laugh through amusement.
                             </p>
-                            <a href="#pablo" class="btn btn-primary btn-round">
-                                <i class="material-icons">subject</i> Read
+                            <a href="/movieList/Action" class="btn btn-primary btn-round">
+                                <i class="material-icons">subject</i> More
                             </a>
                         </div>
                     </div>
@@ -198,18 +197,17 @@
                 </div>
 
                 <div class="col-md-6">
-                    <div class="card card-background" style="background-image: url(../assets/img/dg3.jpg)">
+                    <div class="card card-background" style="background-image: url(/resources/images/animation.jpg)">
                         <div class="card-content">
                             <h6 class="category text-info">BlueRay Mart</h6>
                             <a href="#pablo">
-                                <h3 class="card-title">Sci-Fi</h3>
+                                <h3 class="card-title">Comedy</h3>
                             </a>
                             <p class="card-description">
-                                Don't be scared of the truth because we need to restart the human foundation in truth
-                                And I love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is...
+                                Comedy is a genre of film in which the main emphasis is on humour. These films are designed to make the audience laugh through amusement.
                             </p>
-                            <a href="#pablo" class="btn btn-primary btn-round">
-                                <i class="material-icons">subject</i> Read
+                            <a href="/movieList/Action" class="btn btn-primary btn-round">
+                                <i class="material-icons">subject</i> More
                             </a>
                         </div>
                     </div>
@@ -217,18 +215,17 @@
                 </div>
 
                 <div class="col-md-6">
-                    <div class="card card-background" style="background-image: url(../assets/img/dg1.jpg)">
+                    <div class="card card-background" style="background-image: url(/resources/images/animation.jpg)">
                         <div class="card-content">
                             <h6 class="category text-info">BlueRay Mart</h6>
                             <a href="#pablo">
-                                <h3 class="card-title">Drama</h3>
+                                <h3 class="card-title">Comedy</h3>
                             </a>
                             <p class="card-description">
-                                Don't be scared of the truth because we need to restart the human foundation in truth
-                                And I love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is...
+                                Comedy is a genre of film in which the main emphasis is on humour. These films are designed to make the audience laugh through amusement.
                             </p>
-                            <a href="#pablo" class="btn btn-primary btn-round">
-                                <i class="material-icons">subject</i> read
+                            <a href="/movieList/Action" class="btn btn-primary btn-round">
+                                <i class="material-icons">subject</i> More
                             </a>
                         </div>
                     </div>
