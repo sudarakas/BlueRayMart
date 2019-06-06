@@ -82,6 +82,18 @@ public class MovieDaoImp implements MovieDao {
     }
     
     @Override
+    public List<Movie> getUpcomingMovies() {
+        Session session = sessionFactory.getCurrentSession();
+        org.hibernate.Query query = session.createQuery("FROM Movie WHERE movieStatus='Coming Soon'");
+       
+        query.setMaxResults(3);
+        List<Movie> upcommingMovies = query.list();
+        session.flush();
+
+        return upcommingMovies;
+    }
+    
+    @Override
     public List<Movie> getMoviesByGenere(String Genere) {
         Session session = sessionFactory.getCurrentSession();
         org.hibernate.Query query = session.createQuery("FROM Movie WHERE movieGenre='"+Genere+"'");

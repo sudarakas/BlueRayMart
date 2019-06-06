@@ -38,8 +38,9 @@ public class HomeController {
     @RequestMapping("/")
     public String home(Model model) {
         List<Movie> movies = movieDao.getLatestMovies();
+        List<Movie> upcommingMovies = movieDao.getUpcomingMovies();
         model.addAttribute("movies", movies);
-        
+        model.addAttribute("upcommingMovies", upcommingMovies);
         return "home";
     }
 

@@ -20,6 +20,7 @@ public interface MovieDao {
     Movie getMovieById(String Id);
     List<Movie> getAllMovies();
     List<Movie> getLatestMovies();
+    List<Movie> getUpcomingMovies();
     List<Movie> getMoviesByGenere(String Genere);
     
 }
