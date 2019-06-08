@@ -89,11 +89,11 @@
                     <div class="col-md-10 col-md-offset-1">
                         <form:form action="${pageContext.request.contextPath}/admin/inventory/addmovie" method="post" commandName="movie" enctype="multipart/form-data">
                             <div class="form-group">
-                                <label for="name">Movie Name</label>
+                                <label for="name">Movie Name</label> <form:errors path="movieName" cssStyle="color:#EA1E63;" />
                                 <form:input path="movieName" type="text" value="" class="form-control" />
                             </div>
                             <div class="form-group">
-                                <label for="name">Movie Genre</label>
+                                <label for="name">Movie Genre</label> <form:errors path="movieGenre" cssStyle="color:#EA1E63;" />
                                 <form:select path="movieGenre" class="selectpicker" data-style="select-with-transition" title="Choose Movie Genre">
                                     <form:option value="Action" label="Action"/>
                                     <form:option value="Adventure" label="Adventure"/>
@@ -110,7 +110,7 @@
                                 </form:select>
                             </div>
                             <div class="form-group">
-                                <label for="name">Movie Format</label>
+                                <label for="name">Movie Format</label> <form:errors path="movieFormat" cssStyle="color:#EA1E63;" />
                                 <form:select path="movieFormat" class="selectpicker" data-style="select-with-transition" title="Choose Movie Format">
                                     <form:option value="BlueRay" label="BlueRay"/>
                                     <form:option value="DVD" label="DVD"/>
@@ -119,11 +119,11 @@
                                 </form:select>
                             </div>
                             <div class="form-group">
-                                <label for="name">Director</label>
+                                <label for="name">Director</label> <form:errors path="movieDirector" cssStyle="color:#EA1E63;" />
                                 <form:input path="movieDirector" type="text" value="" class="form-control" />
                             </div>
                             <div class="form-group">
-                                <label for="name">Studio</label>
+                                <label for="name">Studio</label> <form:errors path="movieStudio" cssStyle="color:#EA1E63;" />
                                 <form:input path="movieStudio" type="text" value="" class="form-control" />
                             </div>
                             <div class="form-group">
@@ -139,7 +139,7 @@
                                 <form:input path="movieLanguage" type="text" value="" class="form-control" />
                             </div>
                             <div class="form-group">
-                                <label for="name">Run Time</label>
+                                <label for="name">Run Time</label> <form:errors path="movieRunTime" cssStyle="color:#EA1E63;" />
                                 <form:input path="movieRunTime" type="text" value="" class="form-control" />
                             </div>
                             <div class="form-group">
@@ -151,15 +151,15 @@
                                 <form:textarea path="movieDescription" type="text" value="" class="form-control" rows="5" />
                             </div>
                             <div class="form-group">
-                                <label for="name">Price</label>
+                                <label for="name">Price</label> <form:errors path="moviePrice" cssStyle="color:#EA1E63;" />
                                 <form:input path="moviePrice" type="text" value="" class="form-control" />
                             </div>
                             <div class="form-group">
-                                <label for="name">Unit in Stock</label>
+                                <label for="name">Unit in Stock</label> <form:errors path="movieUnitinStock" cssStyle="color:#EA1E63;" />
                                 <form:input path="movieUnitinStock" type="number" value="" class="form-control" />
                             </div>
                             <div class="form-group">
-                                <label for="name">Status</label>
+                                <label for="name">Status</label> <form:errors path="movieStatus" cssStyle="color:#EA1E63;" />
                                 <form:select path="movieStatus" class="selectpicker" data-style="select-with-transition" title="Choose Movie Status">
                                     <form:option value="Available" label="Available"/>  
                                     <form:option value="Out of Stock" label="Out of Stock"/>

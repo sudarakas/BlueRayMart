@@ -14,9 +14,11 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -90,7 +92,12 @@ public class HomeController {
     }
     
     @RequestMapping(value="/admin/inventory/addmovie", method = RequestMethod.POST)
-    public String addMoviePost(@ModelAttribute("movie") Movie movie, HttpServletRequest request){
+    public String addMoviePost(@Valid @ModelAttribute("movie") Movie movie,BindingResult result, HttpServletRequest request){
+        
+        if(result.hasErrors()){
+            return "addMovie"; 
+        }
+        
         movieDao.addMovie(movie);
         MultipartFile movieImage = movie.getMovieImage();
         String rootDirectory = request.getSession().getServletContext().getRealPath("/");
@@ -136,7 +143,11 @@ public class HomeController {
     }
     
     @RequestMapping(value = "admin/inventory/editMovie", method = RequestMethod.POST)
-    public String editMovie(@ModelAttribute Movie movie, Model model, HttpServletRequest request){
+    public String editMovie(@Valid @ModelAttribute Movie movie, Model model,BindingResult result, HttpServletRequest request){
+        
+        if(result.hasErrors()){
+            return "editMovie";
+        }
         
         MultipartFile movieImage = movie.getMovieImage();
         String rootDirectory = request.getSession().getServletContext().getRealPath("/");

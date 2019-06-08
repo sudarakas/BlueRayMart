@@ -10,6 +10,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Transient;
+import javax.validation.constraints.Min;
+import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.web.multipart.MultipartFile;
 
 /**
@@ -22,19 +24,29 @@ public class Movie {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private String movieId;
+    
+    @NotEmpty(message = "Movie Name shouldn't be empty")
     private String movieName;
+    @NotEmpty(message = "Movie Fromate shouldn't be empty")
     private String movieFormat;
+    @NotEmpty(message = "Movie Genere shouldn't be empty")
     private String movieGenre;
+    @NotEmpty(message = "Movie Director shouldn't be empty")
     private String movieDirector;
+    @NotEmpty(message = "Movie Stdio shouldn't be empty")
     private String movieStudio;
     private String movieReleaseDate;
     private String movieOriginalLanguage;
     private String movieLanguage;
+    @NotEmpty(message = "Movie Runtime shouldn't be empty")
     private String movieRunTime;
     private String movieIMDB;
-    private String movieDescription;
+    private String movieDescription; 
+    @Min(value = 0, message = "Price shoud be equal or higher than 0.00")
     private double moviePrice;
+    @Min(value = 0, message = "UnitinStock shoud be equal or higher than 0.00")
     private int movieUnitinStock;
+    @NotEmpty(message = "Movie Status shouldn't be empty")
     private String movieStatus;
     
     @Transient
