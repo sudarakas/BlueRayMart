@@ -27,86 +27,81 @@
     <body class="login-page">
         <%@include  file="/WEB-INF/jsp/include/nav.jsp" %>
 
-        <div class="page-header header-filter" style="background-image: url('../assets/img/bg7.jpg'); background-size: cover; background-position: top center;">
+        <div class="page-header header-filter" filter-color="purple" style="background-image: url('/resources/images/cover-<%= (int) (Math.random() * 5)%>.jpg'); background-size: cover; background-position: top center;">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
+                    <div class="col-md-10 col-md-offset-1">
+
                         <div class="card card-signup">
-                            <form class="form" method="" action="">
-<!--                                <div class="header header-primary text-center">
-                                    <h4 class="card-title">Log in</h4>
-                                    <div class="social-line">
-                                        <a href="#pablo" class="btn btn-just-icon btn-simple">
-                                            <i class="fa fa-facebook-square"></i>
-                                        </a>
-                                        <a href="#pablo" class="btn btn-just-icon btn-simple">
-                                            <i class="fa fa-twitter"></i>
-                                        </a>
-                                        <a href="#pablo" class="btn btn-just-icon btn-simple">
-                                            <i class="fa fa-google-plus"></i>
-                                        </a>
-                                    </div>
-                                </div>-->
-                                <p class="description text-center">Login</p>
-                                <div class="card-content">
-                                    <div class="input-group">
-                                        <span class="input-group-addon">
-                                            <i class="material-icons">email</i>
-                                        </span>
-                                        <input type="text" class="form-control" placeholder="Email">
-                                    </div>
-
-                                    <div class="input-group">
-                                        <span class="input-group-addon">
-                                            <i class="material-icons">lock_outline</i>
-                                        </span>
-                                        <input type="password" placeholder="Password" class="form-control" />
-                                    </div>
-
-                                    <!-- If you want to add a checkbox to this form, uncomment this code
-
-                                    <div class="checkbox">
-                                            <label>
-                                                    <input type="checkbox" name="optionsCheckboxes" checked>
-                                                    Subscribe to newsletter
-                                            </label>
-                                    </div> -->
+                            <h2 class="card-title text-center">Login</h2>
+                            <div class="col-md-6 col-md-offset-3" style="margin-bottom: 8%;">
+                                <div class="social text-center">
+                                    <h4> Enter your login details </h4>
                                 </div>
-                                <div class="footer text-center">
-                                    <a href="#pablo" class="btn btn-primary btn-simple btn-wd btn-lg">Get Started</a>
-                                </div>
-                            </form>
+
+                                <form name="loginForm" action="<c:url value="/j_spring_security_check" />" method="post">
+                                    <div class="card-content">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <i class="material-icons">face</i>
+                                            </span>
+                                            <input type="text" id="username" name="username" class="form-control" placeholder="Username" />
+                                        </div>
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <i class="material-icons">lock_outline</i>
+                                            </span>
+                                            <input type="password" id="password" name="password" placeholder="Password" class="form-control" />
+                                        </div>
+                                    </div>
+                                    <div class="footer text-center">
+                                        <input type="submit" value="Login Now" class="btn btn-primary btn-round" />
+                                    </div>
+                                    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+                                </form>
+                                <c:if test="${not empty msg}">
+                                    <div class="text-center text-success">
+                                        <b>Alert:</b> ${msg}
+                                    </div>
+                                </c:if>
+                                <c:if test="${not empty error}">
+                                    <div class="text-center text-danger">
+                                        <b>Error Alert:</b> ${error}
+                                    </div>
+                                </c:if>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <%@include  file="/WEB-INF/jsp/include/footer.jsp" %>
-
         </div>
+        <%@include  file="/WEB-INF/jsp/include/footer.jsp" %>
 
-    </body>
+    </div>
 
-
-
-    <!--   Core JS Files   -->
-    <script src="<c:url value="/resources/js/jquery.min.js" />" type="text/javascript"></script>
-    <script src="<c:url value="/resources/js/bootstrap.min.js"/>" type="text/javascript"></script>
-    <script src="<c:url value="/resources/js/material.min.js"/>"</script>
+</body>
 
 
-    <script src="<c:url value="/resources/js/moment.min.js"/>"></script>
-    <script src="<c:url value="/resources/js/nouislider.min.js"/>" type="text/javascript"></script>
-    <script src="<c:url value="/resources/js/bootstrap-datetimepicker.js"/>" type="text/javascript"></script>
-    <script src="<c:url value="/resources/js/bootstrap-selectpicker.js"/>" type="text/javascript"></script>
-    <script src="<c:url value="/resources/js/bootstrap-tagsinput.js"/>"></script>
-    <script src="<c:url value="/resources/js/jasny-bootstrap.min.js"/>"></script>
-    <script  type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
-    <script src="<c:url value="/resources/js/material-kit.js?v=1.2.1"/>" type="text/javascript"/></script>
+
+<!--   Core JS Files   -->
+<script src="<c:url value="/resources/js/jquery.min.js" />" type="text/javascript"></script>
+<script src="<c:url value="/resources/js/bootstrap.min.js"/>" type="text/javascript"></script>
+<script src="<c:url value="/resources/js/material.min.js"/>"</script>
+
+
+<script src="<c:url value="/resources/js/moment.min.js"/>"></script>
+<script src="<c:url value="/resources/js/nouislider.min.js"/>" type="text/javascript"></script>
+<script src="<c:url value="/resources/js/bootstrap-datetimepicker.js"/>" type="text/javascript"></script>
+<script src="<c:url value="/resources/js/bootstrap-selectpicker.js"/>" type="text/javascript"></script>
+<script src="<c:url value="/resources/js/bootstrap-tagsinput.js"/>"></script>
+<script src="<c:url value="/resources/js/jasny-bootstrap.min.js"/>"></script>
+<script  type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+<script src="<c:url value="/resources/js/material-kit.js?v=1.2.1"/>" type="text/javascript"/></script>
 <script type="text/javascript">
-                $().ready(function () {
+    $().ready(function () {
 
-                    materialKitDemo.initContactUs2Map();
-                });
+        materialKitDemo.initContactUs2Map();
+    });
 </script>
 </body>
 

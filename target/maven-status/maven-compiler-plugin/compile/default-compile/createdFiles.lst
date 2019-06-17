@@ -1,4 +1,4 @@
-com\blueraymart\dao\impl\MovieDaoImp.class
-com\blueraymart\dao\MovieDao.class
 com\blueraymart\model\Movie.class
 com\blueraymart\blueraymart\HomeController.class
+com\blueraymart\dao\impl\MovieDaoImp.class
+com\blueraymart\dao\MovieDao.class
