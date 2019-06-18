@@ -52,6 +52,14 @@ public class Cart {
         this.subTotal = subTotal;
     }
     
+    public void updateSubTotal(){
+        
+        subTotal = 0;
+        for(CartItem item : cartItems.values()){
+            subTotal += item.getTotalPrice();
+        }
+    }
+    
     public void addCartItem(CartItem item){
         String movieId = item.getMovie().getMovieId();
         
