@@ -9,11 +9,13 @@ import com.blueraymart.dao.CartDao;
 import com.blueraymart.model.Cart;
 import java.util.HashMap;
 import java.util.Map;
+import org.springframework.stereotype.Repository;
 
 /**
  *
  * @author NanoX
  */
+@Repository
 public class CartDaoImp implements CartDao{
     
     private Map<String, Cart> cartsList;
