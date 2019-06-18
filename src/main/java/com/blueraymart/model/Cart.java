@@ -67,4 +67,9 @@ public class Cart {
         updateSubTotal();
     }
     
+    public void removeCartItem(CartItem item){
+        String movieId = item.getMovie().getMovieId();
+        cartItems.remove(movieId);
+        updateSubTotal();
+    }
 }
