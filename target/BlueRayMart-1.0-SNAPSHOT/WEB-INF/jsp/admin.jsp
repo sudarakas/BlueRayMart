@@ -23,50 +23,7 @@
 
     </head>
     <body class="ecommerce-page">
-        <nav class="navbar navbar-default navbar-transparent navbar-fixed-top navbar-color-on-scroll" color-on-scroll="100"
-             id="sectionsNav">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="/">BlueRay Mart</a>
-                </div>
-
-                <div class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li>
-                            <a href="/">
-                                <i class="material-icons">home</i> Home
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/">
-                                <i class="material-icons">info</i> About Us
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/">
-                                <i class="material-icons">message</i> Contact Us
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/">
-                                Sign In
-                            </a>
-                        </li>
-                        <li class="button-container">
-                            <a href="" target="_blank" class="btn btn-primary">
-                                Sign Up
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+        <%@include  file="/WEB-INF/jsp/include/nav.jsp" %>
 
         <div class="page-header header-filter header-small" data-parallax="true"
              style="background-image: url('/resources/images/cover-<%= (int) (Math.random() * 5) %>.jpg');">
