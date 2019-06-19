@@ -23,7 +23,7 @@ public class Cart {
         subTotal = 0;
     }
     
-    private Cart(String cartId){
+    public Cart(String cartId){
         this();
         this.cartId=cartId;
     }

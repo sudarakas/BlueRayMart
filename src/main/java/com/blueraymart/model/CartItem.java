@@ -19,10 +19,10 @@ public class CartItem {
         
     }
 
-    public CartItem(Movie movie, int quantity, double totalPrice) {
+    public CartItem(Movie movie) {
         this.movie = movie;
-        this.quantity = quantity;
-        this.totalPrice = totalPrice;
+        this.quantity = 1;
+        this.totalPrice = movie.getMoviePrice();
     }
 
     public Movie getMovie() {
