@@ -9,6 +9,7 @@
 <!DOCTYPE html>
 <html>
     <%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+    <script src="<c:url value="/resources/js/angular.min.js" />" type="text/javascript"></script>
     <%@include file="/WEB-INF/jsp/include/viewHeader.jsp" %>
 
     <div class="page-header header-filter" data-parallax="true" filter-color="rose" style="background-image: url('/resources/images/cover-<%= (int) (Math.random() * 5) %>.jpg');">

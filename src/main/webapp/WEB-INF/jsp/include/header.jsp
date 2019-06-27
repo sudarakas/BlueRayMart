@@ -3,6 +3,7 @@
     Created on : Apr 13, 2019, 10:33:20 AM
     Author     : NanoX
 --%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>JSP OK</title>
@@ -11,6 +12,9 @@
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
 
+    <!--    JS File-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.1/angular.min.js" > </script>
+    
     <!-- CSS Files -->
     <link href="<c:url value="/resources/css/bootstrap.min.css" />" rel="stylesheet" />
           <link href="<c:url value="/resources/css/material-kit.css?v=1.2.1" />"rel="stylesheet"/>
