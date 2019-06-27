@@ -40,7 +40,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-md-12">
-                                    <h4>Movie Inventory</h4>
+                                    <h4>Movie Cart</h4>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="table-responsive">

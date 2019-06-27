@@ -17,7 +17,7 @@ cartApp.controller("cartCtrl", function($scope, $http){
     
     $scope.clearCart = function (){
         $http.delete("/rest/cart/"+$scope.cartId).success($scope.refreshCart($scope.cartId));
-    }
+    };
     
     $scope.initCartId = function (cartId){
         $scope.cartId = cartId;
@@ -26,9 +26,8 @@ cartApp.controller("cartCtrl", function($scope, $http){
     
     $scope.addToCart = function (movieId){
         $http.put("/rest/cart/add/"+movieId).success(function (data){
-             //$scope.refreshCart($http.get("/rest/cart/cartId"));
-//             alert("Movie successfully add to the cart");
-                window.open('/cart')
+             $scope.refreshCart($http.get("/rest/cart/cartId"));
+             alert("Movie successfully add to the cart");
          });
     };
     

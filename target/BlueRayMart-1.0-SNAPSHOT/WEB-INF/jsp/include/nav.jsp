@@ -38,8 +38,8 @@
                     </a>
                 </li>
                 <li>
-                    <a href="<c:url value="/login"/>">
-                        <i class='material-icons'>person</i> Admin Panel
+                    <a href="<c:url value="/cart"/>">
+                        <i class='material-icons'>person</i> Cart
                     </a>
                 </li>
 
