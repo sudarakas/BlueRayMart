@@ -74,7 +74,7 @@
                                             </div>
 
                                             <a href="<spring:url value="/movieList/viewMovie/${movie.movieId}"/>">
-                                                <button class="btn btn-rose pull-right" rel="tooltip" title="Added to Cart" data-placement="top">
+                                                <button class="btn btn-rose pull-right"  data-placement="top">
                                                     Buy Now
                                                 </button>
                                             </a>

@@ -23,7 +23,7 @@
     </div>
 
     <div class="section section-gray">
-        <div class="container">
+        <div class="container" ng-app="cartApp">
             <div class="main main-raised main-product">
                 <div class="row">
                     <div class="col-md-6 col-sm-6">
@@ -107,9 +107,16 @@
                                 </select>
                             </div>
                         </div>
+                        <c:set var="role" scope="page" value="${param.role}"/>
+                        <c:set var="url" scope="page" value="/movieList"/>
+                        <c:if test="${role='admin'}">
+                            <c:set var="url" scope="page" value="/admin/inventory"/>
+                       </c:if>
                         <div class="row text-right">
-                            <button class="btn btn-rose btn-round">Add to Cart &nbsp;<i class="material-icons">shopping_cart</i></button>
+                            <button class="btn btn-warning btn-round" rel="tooltip" onclick="window.open('<c:url value="${url}"/>','_self')" title="Added to Cart">Back &nbsp;<i class="material-icons">subject</i></button>
+                            <button class="btn btn-rose btn-round" rel="tooltip" title="Added to Cart">Add to Cart &nbsp;<i class="material-icons">shopping_cart</i></button>
                         </div>
+                        
                     </div>
                 </div>
             </div>
