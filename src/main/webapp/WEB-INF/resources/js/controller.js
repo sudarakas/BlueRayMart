@@ -10,13 +10,13 @@ cartApp.controller("cartCtrl", function($scope, $http){
     
     
     $scope.refreshCart = function (cartId){
-         $http.get("/BlueRayMart/rest/cart"+$scope.cartId).success(function (data){
+         $http.get("/rest/cart/"+$scope.cartId).success(function (data){
              $scope.cart=data;
          });
     };
     
     $scope.clearCart = function (){
-        $http.delete("/BlueRayMart/rest/cart"+$scope.cartId).success($scope.refreshCart($scope.cartId));
+        $http.delete("/rest/cart/"+$scope.cartId).success($scope.refreshCart($scope.cartId));
     }
     
     $scope.initCartId = function (cartId){
@@ -25,16 +25,17 @@ cartApp.controller("cartCtrl", function($scope, $http){
     };
     
     $scope.addToCart = function (movieId){
-        $http.put("/BlueRayMart/rest/add"+movieId).success(function (data){
-             $scope.refreshCart($http.get("/BlueRayMart/rest/cart/cartId"));
-             alert("Movie successfully add to the cart")
+        $http.put("/rest/cart/add/"+movieId).success(function (data){
+             //$scope.refreshCart($http.get("/rest/cart/cartId"));
+//             alert("Movie successfully add to the cart");
+                window.open('/cart')
          });
-    }
+    };
     
     $scope.removeFromCart = function (movieId){
-        $http.put("/BlueRayMart/rest/remove"+movieId).success(function (data){
-             $scope.refreshCart($http.get("/BlueRayMart/rest/cart/cartId"));
+        $http.put("/rest/cart/remove/"+movieId).success(function (data){
+             $scope.refreshCart($http.get("/rest/cart/cartId"));
              //alert("Movie successfully add to the cart")
          });
-    }
+    };
 });

@@ -74,7 +74,7 @@ public class CartController {
     
     @RequestMapping(value = "/remove/{movieId}", method = RequestMethod.PUT)
     @ResponseStatus(value = HttpStatus.NO_CONTENT)
-    public void removeItem(@PathVariable(value = "movieId")String movieId, HttpServletRequest request){
+    public void removeItem(@PathVariable String movieId, HttpServletRequest request){
         String sessionId =request.getSession(true).getId();
         Cart cart = cartDao.readCart(sessionId);
         

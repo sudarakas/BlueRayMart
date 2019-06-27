@@ -11,6 +11,7 @@
 <html>
     <%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
     <script src="<c:url value="/resources/js/angular.min.js" />" type="text/javascript"></script>
+    <script src="<c:url value="/resources/js/controller.js"/>" type="text/javascript"></script>
     <%@include file="/WEB-INF/jsp/include/viewHeader.jsp" %>
 
     <div class="page-header header-filter" data-parallax="true" filter-color="rose" style="background-image: url('/resources/images/cover-<%= (int) (Math.random() * 5)%>.jpg');">
@@ -31,9 +32,12 @@
 
                         <div id="tables">
                             <div class="title">
-                                <h3>Inventory</h3>
+                                <h3>Cart</h3>
                             </div>
-                            <div class="text-right"><a href="/admin/inventory/addmovie" class="btn btn-success">Add Movie</a></div>
+                            <div class="text-right">
+                                <a ng-click="clearCart()" class="btn btn-danger">Clear Cart</a>
+                                <a href="/admin/inventory/addmovie" class="btn btn-success">Buy More</a>
+                            </div>
                             <div class="row">
                                 <div class="col-md-12">
                                     <h4>Movie Inventory</h4>
@@ -58,8 +62,8 @@
                                                     <td>{{item.movie.moviePrice}}</td>
                                                     <td>{{item.quantity}}</td>
                                                     <td>{{item.totalPrice}}</td>
-                                                    <td><a rel="tooltip" class="btn btn-danger btn-round" ng-click="removeFromCart({{item.movie.movieId}})">
-                                                            <i class="material-icons">close</i>
+                                                    <td><a class="btn btn-danger btn-round" ng-click="removeFromCart(item.movie.movieId)">
+                                                             <i class="material-icons">close</i>
                                                         </a></td>
                                                 </tr>
                                             </tbody>
@@ -71,7 +75,7 @@
                         </div>
                     </div>
                 </div>
-
+                    <hr>
                 <div class="features text-center">
                     <div class="row">
                         <div class="col-md-4">
@@ -123,14 +127,7 @@
     <script src="<c:url value="/resources/js/bootstrap-selectpicker.js"/>" type="text/javascript"></script>
     <script src="<c:url value="/resources/js/bootstrap-tagsinput.js"/>"></script>
     <script src="<c:url value="/resources/js/jasny-bootstrap.min.js"/>"></script>
-    <script  type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
     <script src="<c:url value="/resources/js/material-kit.js?v=1.2.1"/>" type="text/javascript"/></script>
-<script type="text/javascript">
-                                                    $().ready(function () {
-
-                                                        materialKitDemo.initContactUs2Map();
-                                                    });
-</script>
 </body>
 
 </html>

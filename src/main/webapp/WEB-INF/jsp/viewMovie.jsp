@@ -10,6 +10,7 @@
 <html>
     <%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
     <script src="<c:url value="/resources/js/angular.min.js" />" type="text/javascript"></script>
+        <script src="<c:url value="/resources/js/controller.js"/>" type="text/javascript"></script>
     <%@include file="/WEB-INF/jsp/include/viewHeader.jsp" %>
 
     <div class="page-header header-filter" data-parallax="true" filter-color="rose" style="background-image: url('/resources/images/cover-<%= (int) (Math.random() * 5) %>.jpg');">
@@ -112,9 +113,9 @@
                         <c:if test="${role='admin'}">
                             <c:set var="url" scope="page" value="/admin/inventory"/>
                        </c:if>
-                        <div class="row text-right">
-                            <button class="btn btn-warning btn-round" rel="tooltip" onclick="window.open('<c:url value="${url}"/>','_self')" title="Added to Cart">Back &nbsp;<i class="material-icons">subject</i></button>
-                            <button class="btn btn-rose btn-round" rel="tooltip" title="Added to Cart">Add to Cart &nbsp;<i class="material-icons">shopping_cart</i></button>
+                        <div class="row text-right" ng-controller="cartCtrl">
+                            <button class="btn btn-warning btn-round" rel="tooltip" onclick="window.open('<c:url value="${url}"/>','_self')" title="Back to Shop">Back &nbsp;<i class="material-icons">subject</i></button>
+                            <button class="btn btn-rose btn-round" rel="tooltip" title="Added to Cart" ng-click="addToCart('${movie.movieId}','${100}')">Add to Cart &nbsp;<i class="material-icons">shopping_cart</i></button>
                         </div>
                         
                     </div>
@@ -155,139 +156,6 @@
 
                 </div>
             </div>
-
-            <div class="related-products">
-                <h3 class="title text-center">You may also be interested in:</h3>
-
-                <div class="row">
-                    <div class="col-sm-6 col-md-3">
-                        <div class="card card-product">
-                            <div class="card-image">
-                                <a href="#pablo">
-                                    <img class="img" src="../assets/img/examples/card-product1.jpg" />
-                                </a>
-                            </div>
-
-                            <div class="card-content">
-                                <h6 class="category text-rose">Trending</h6>
-                                <h4 class="card-title">
-                                    <a href="#pablo">Dolce & Gabbana</a>
-                                </h4>
-                                <div class="card-description">
-                                    Dolce & Gabbana's 'Greta' tote has been crafted in Italy from hard-wearing red textured-leather.
-                                </div>
-                                <div class="footer">
-                                    <div class="price">
-                                        <h4>$1,459</h4>
-                                    </div>
-                                    <div class="stats">
-                                        <button type="button" rel="tooltip" title="Saved to Wishlist" class="btn btn-just-icon btn-simple btn-rose">
-                                            <i class="material-icons">favorite</i>
-                                        </button>
-                                    </div>
-                                </div>
-
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div class="col-sm-6 col-md-3">
-                        <div class="card card-product">
-                            <div class="card-image">
-                                <a href="#pablo">
-                                    <img class="img" src="../assets/img/examples/card-product3.jpg" />
-                                </a>
-                            </div>
-
-                            <div class="card-content">
-                                <h6 class="category text-muted">Popular</h6>
-                                <h4 class="card-title">
-                                    <a href="#pablo">Balmain</a>
-                                </h4>
-                                <div class="card-description">
-                                    Balmain's mid-rise skinny jeans are cut with stretch to ensure they retain their second-skin fit but move comfortably.
-                                </div>
-                                <div class="footer">
-                                    <div class="price">
-                                        <h4>$459</h4>
-                                    </div>
-                                    <div class="stats">
-                                        <button type="button" rel="tooltip" title="Save to Wishlist" class="btn btn-just-icon btn-simple btn-default">
-                                            <i class="material-icons">favorite</i>
-                                        </button>
-                                    </div>
-                                </div>
-
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div class="col-sm-6 col-md-3">
-                        <div class="card card-product">
-                            <div class="card-image">
-                                <a href="#pablo">
-                                    <img class="img" src="../assets/img/examples/card-product4.jpg" />
-                                </a>
-                            </div>
-
-                            <div class="card-content">
-                                <h6 class="category text-muted">Popular</h6>
-                                <h4 class="card-title">
-                                    <a href="#pablo">Balenciaga</a>
-                                </h4>
-                                <div class="card-description">
-                                    Balenciaga's black textured-leather wallet is finished with the label's iconic 'Giant' studs. This is where you can...
-                                </div>
-                                <div class="footer">
-                                    <div class="price">
-                                        <h4>$590</h4>
-                                    </div>
-                                    <div class="stats">
-                                        <button type="button" rel="tooltip" title="Saved to Wishlist" class="btn btn-just-icon btn-simple btn-rose">
-                                            <i class="material-icons">favorite</i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-6 col-md-3">
-                        <div class="card card-product">
-                            <div class="card-image">
-                                <a href="#pablo">
-                                    <img class="img" src="../assets/img/examples/card-product2.jpg" />
-                                </a>
-                            </div>
-
-                            <div class="card-content">
-                                <h6 class="category text-rose">Trending</h6>
-                                <h4 class="card-title">
-                                    <a href="#pablo">Dolce & Gabbana</a>
-                                </h4>
-                                <div class="card-description">
-                                    Dolce & Gabbana's 'Greta' tote has been crafted in Italy from hard-wearing red textured-leather.
-                                </div>
-                                <div class="footer">
-                                    <div class="price">
-                                        <h4>$1,459</h4>
-                                    </div>
-                                    <div class="stats">
-                                        <button type="button" rel="tooltip" title="Save to Wishlist" class="btn btn-just-icon btn-simple btn-default">
-                                            <i class="material-icons">favorite</i>
-                                        </button>
-                                    </div>
-                                </div>
-
-                            </div>
-
-                        </div>
-                    </div>
-
-                </div>
-            </div>
         </div>
     </div>
 
@@ -295,7 +163,8 @@
     <!--   Core JS Files   -->
     <script src="<c:url value="/resources/js/jquery.min.js" />" type="text/javascript"></script>
     <script src="<c:url value="/resources/js/bootstrap.min.js"/>" type="text/javascript"></script>
-    <script src="<c:url value="/resources/js/material.min.js"/>"</script>
+    <script src="<c:url value="/resources/js/material.min.js"/>"></script>
+
 
 
     <script src="<c:url value="/resources/js/moment.min.js"/>"></script>
@@ -304,14 +173,7 @@
     <script src="<c:url value="/resources/js/bootstrap-selectpicker.js"/>" type="text/javascript"></script>
     <script src="<c:url value="/resources/js/bootstrap-tagsinput.js"/>"></script>
     <script src="<c:url value="/resources/js/jasny-bootstrap.min.js"/>"></script>
-    <script  type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
     <script src="<c:url value="/resources/js/material-kit.js?v=1.2.1"/>" type="text/javascript"/></script>
-<script type="text/javascript">
-    $().ready(function () {
-
-        materialKitDemo.initContactUs2Map();
-    });
-</script>
 </body>
 
 </html>
