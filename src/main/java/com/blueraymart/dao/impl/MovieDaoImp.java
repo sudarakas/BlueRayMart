@@ -19,7 +19,6 @@ import org.springframework.transaction.annotation.Transactional;
  *
  * @author NanoX
  */
-
 @Repository
 @Transactional
 public class MovieDaoImp implements MovieDao {
@@ -28,12 +27,32 @@ public class MovieDaoImp implements MovieDao {
     private SessionFactory sessionFactory;
 
     @Override
+    public List<Movie> getMovieList() {
+        Session session = sessionFactory.getCurrentSession();
+        org.hibernate.Query query = session.createQuery("from Movie");
+
+        List<Movie> movies  = query.list();
+        session.flush();
+
+        return movies;
+    }
+
+    @Override
+    public Movie getMovieById(int id) {
+        Session session = sessionFactory.getCurrentSession();
+        Movie movie = (Movie) session.get(Movie.class, id);
+        session.flush();
+
+        return movie;
+    }
+
+    @Override
     public void addMovie(Movie movie) {
         Session session = sessionFactory.getCurrentSession();
         session.saveOrUpdate(movie);
         session.flush();
     }
-    
+
     @Override
     public void editMovie(Movie movie) {
         Session session = sessionFactory.getCurrentSession();
@@ -42,57 +61,36 @@ public class MovieDaoImp implements MovieDao {
     }
 
     @Override
-    public void deleteMovie(String Id) {
+    public void deleteMovie(Movie movie) {
         Session session = sessionFactory.getCurrentSession();
-        session.delete(getMovieById(Id));
-
+        session.delete(movie);
         session.flush();
     }
 
-    @Override
-    public Movie getMovieById(String Id) {
-        Session session = sessionFactory.getCurrentSession();
-        Movie movie = (Movie) session.get(Movie.class, Id);
-        session.flush();
-
-        return movie;
-    }
-
-    @Override
-    public List<Movie> getAllMovies() {
-        Session session = sessionFactory.getCurrentSession();
-        org.hibernate.Query query = session.createQuery("from Movie");
-
-        List<Movie> movies = query.list();
-        session.flush();
-
-        return movies;
-    }
-    
     @Override
     public List<Movie> getLatestMovies() {
         Session session = sessionFactory.getCurrentSession();
         org.hibernate.Query query = session.createQuery("FROM Movie ORDER BY movieId DESC");
-       
+
         query.setMaxResults(3);
         List<Movie> movies = query.list();
         session.flush();
 
         return movies;
     }
-    
+
     @Override
     public List<Movie> getUpcomingMovies() {
         Session session = sessionFactory.getCurrentSession();
         org.hibernate.Query query = session.createQuery("FROM Movie WHERE movieStatus='Coming Soon'");
-       
+
         query.setMaxResults(3);
         List<Movie> upcommingMovies = query.list();
         session.flush();
 
         return upcommingMovies;
     }
-    
+
     @Override
     public List<Movie> getMoviesByGenere(String Genere) {
         Session session = sessionFactory.getCurrentSession();

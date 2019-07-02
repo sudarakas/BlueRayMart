@@ -96,6 +96,11 @@ public class BillingAddress implements Serializable{
     public void setCustomer(Customer customer) {
         this.customer = customer;
     }
+
+    @Override
+    public String toString() {
+        return "BillingAddress{" + "streetName=" + streetName + ", apartmentNumber=" + apartmentNumber + ", city=" + city + ", state=" + state + ", country=" + country + ", postalCode=" + postalCode + '}';
+    }
     
     
     

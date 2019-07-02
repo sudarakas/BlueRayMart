@@ -7,23 +7,12 @@ package com.blueraymart.blueraymart;
 
 import com.blueraymart.dao.MovieDao;
 import com.blueraymart.model.Movie;
-import java.io.File;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
+import com.blueraymart.service.MovieService;
 import java.util.List;
-import javax.servlet.http.HttpServletRequest;
-import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.multipart.MultipartFile;
 
 /**
  *
@@ -33,39 +22,14 @@ import org.springframework.web.multipart.MultipartFile;
 public class HomeController {
     
     @Autowired
-    private MovieDao movieDao;
-
+    private MovieService movieService;
+    
     @RequestMapping("/")
-    public String home(Model model) {
-        List<Movie> movies = movieDao.getLatestMovies();
-        List<Movie> upcommingMovies = movieDao.getUpcomingMovies();
+    public String home(Model model){
+        List<Movie> movies = movieService.getLatestMovies();
+        List<Movie> upcommingMovies = movieService.getUpcomingMovies();
         model.addAttribute("movies", movies);
         model.addAttribute("upcommingMovies", upcommingMovies);
         return "home";
     }
-
-    @RequestMapping("/movieList")
-    public String getMovie(Model model) {
-        List<Movie> movies = movieDao.getAllMovies();
-        model.addAttribute("movies", movies);
-
-        return "movieList";
-    }
-    
-
-    @RequestMapping("/movieList/viewMovie/{movieId}")
-    public String viewMovie(@PathVariable String movieId, Model model) throws IOException {
-        Movie movie = movieDao.getMovieById(movieId);
-        model.addAttribute(movie);
-        return "viewMovie";
-    }
-    
-    @RequestMapping("/movieList/{movieGenre}")
-    public String getMoviesByGenere(@PathVariable String movieGenre, Model model) throws IOException {
-        List<Movie> movies = movieDao.getMoviesByGenere(movieGenre);
-        model.addAttribute("movies", movies);
-        
-        return "movieList";
-    }
-
 }

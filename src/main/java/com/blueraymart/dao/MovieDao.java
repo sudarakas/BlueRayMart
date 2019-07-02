@@ -14,11 +14,11 @@ import java.util.List;
  */
 public interface MovieDao {
     
+    List<Movie> getMovieList();
+    Movie getMovieById(int id);
     void addMovie(Movie movie);
     void editMovie(Movie movie);
-    void deleteMovie(String Id);
-    Movie getMovieById(String Id);
-    List<Movie> getAllMovies();
+    void deleteMovie(Movie movie);
     List<Movie> getLatestMovies();
     List<Movie> getUpcomingMovies();
     List<Movie> getMoviesByGenere(String Genere);
