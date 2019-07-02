@@ -5,43 +5,64 @@
  */
 package com.blueraymart.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.List;
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 /**
  *
  * @author NanoX
  */
-public class Cart {
-    
-    private String cartId;
-    private Map<String, CartItem> cartItems;
-    private double subTotal;
-    
-    private Cart(){
-        cartItems = new HashMap<>();
-        subTotal = 0;
-    }
-    
-    public Cart(String cartId){
-        this();
-        this.cartId=cartId;
-    }
+@Entity
+public class Cart implements Serializable{
 
-    public String getCartId() {
+    private static final long serialVersionUID = 8079831355872836478L;
+    @Id
+    @GeneratedValue
+    private int cartId;
+    
+    @OneToMany(mappedBy = "cart",cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+    private List<CartItem> cartItems;
+    
+    @OneToOne
+    @JoinColumn(name = "customerId")
+    @JsonIgnore
+    private Customer customer;
+    
+    private double subTotal;
+
+    public int getCartId() {
         return cartId;
     }
 
-    public void setCartId(String cartId) {
+    public void setCartId(int cartId) {
         this.cartId = cartId;
     }
 
-    public Map<String, CartItem> getCartItems() {
+    public List<CartItem> getCartItems() {
         return cartItems;
     }
 
-    public void setCartItems(Map<String, CartItem> cartItems) {
+    public void setCartItems(List<CartItem> cartItems) {
         this.cartItems = cartItems;
+    }
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
     }
 
     public double getSubTotal() {
@@ -52,32 +73,5 @@ public class Cart {
         this.subTotal = subTotal;
     }
     
-    public void updateSubTotal(){
-        
-        subTotal = 0;
-        for(CartItem item : cartItems.values()){
-            subTotal += item.getTotalPrice();
-        }
-    }
     
-    public void addCartItem(CartItem item){
-        String movieId = item.getMovie().getMovieId();
-        
-        if(cartItems.containsKey(movieId)){
-            CartItem existingCartItem = cartItems.get(movieId);
-            existingCartItem.setQuantity(existingCartItem.getQuantity()+item.getQuantity());
-            cartItems.put(movieId, existingCartItem);
-        }
-        else{
-            cartItems.put(movieId, item);
-        }
-        
-        updateSubTotal();
-    }
-    
-    public void removeCartItem(CartItem item){
-        String movieId = item.getMovie().getMovieId();
-        cartItems.remove(movieId);
-        updateSubTotal();
-    }
 }

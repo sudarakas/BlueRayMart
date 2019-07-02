@@ -35,7 +35,7 @@ public class CartItem implements Serializable{
     @JoinColumn(name = "movieId")
     private Movie movie;
     
-    private int quentity;
+    private int quantity;
     private double totalPrice;
 
     public int getCartItemId() {
@@ -62,12 +62,12 @@ public class CartItem implements Serializable{
         this.movie = movie;
     }
 
-    public int getQuentity() {
-        return quentity;
+    public int getQuantity() {
+        return quantity;
     }
 
-    public void setQuentity(int quentity) {
-        this.quentity = quentity;
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 
     public double getTotalPrice() {
