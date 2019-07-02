@@ -5,10 +5,16 @@
  */
 package com.blueraymart.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import java.io.Serializable;
+import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Transient;
 import javax.validation.constraints.Min;
 import org.hibernate.validator.constraints.NotEmpty;
@@ -19,7 +25,9 @@ import org.springframework.web.multipart.MultipartFile;
  * @author NanoX
  */
 @Entity
-public class Movie {
+public class Movie implements Serializable{
+
+    private static final long serialVersionUID = 2387707837885240562L;
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -51,7 +59,11 @@ public class Movie {
     
     @Transient
     private MultipartFile movieImage;
-
+    
+    @OneToMany(mappedBy = "movie", cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+    @JsonIgnore
+    private List<CartItem> cartItemList;
+    
     public String getMovieId() {
         return movieId;
     }
@@ -182,6 +194,14 @@ public class Movie {
 
     public void setMovieImage(MultipartFile movieImage) {
         this.movieImage = movieImage;
+    }
+
+    public List<CartItem> getCartItemList() {
+        return cartItemList;
+    }
+
+    public void setCartItemList(List<CartItem> cartItemList) {
+        this.cartItemList = cartItemList;
     }
     
     
