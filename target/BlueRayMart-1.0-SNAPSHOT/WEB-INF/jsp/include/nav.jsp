@@ -58,9 +58,19 @@
                     </c:choose> 
                 </li>
                 <li class="button-container">
-                    <a href="" target="_blank" class="btn btn-primary">
-                        Sign Up
-                    </a>
+                    <c:choose>
+                        <c:when test="${pageContext.request.userPrincipal.name != null}">
+                            <a href="/movie/movieList" class="btn btn-primary">
+                                Buy Now
+                            </a>
+                        </c:when> 
+                        <c:otherwise>
+                            <a href="/register" target="_blank" class="btn btn-primary">
+                                Sign Up
+                            </a>
+                        </c:otherwise>
+                    </c:choose>
+
                 </li>
             </ul>
         </div>

@@ -33,51 +33,133 @@
                     <div class="col-md-10 col-md-offset-1">
 
                         <div class="card card-signup">
-                            <h2 class="card-title text-center">Login</h2>
+                            <h2 class="card-title text-center">Register</h2>
                             <div class="col-md-6 col-md-offset-3" style="margin-bottom: 8%;">
-                                <div class="social text-center">
-                                    <h4> Enter your login details </h4>
-                                </div>
+                                <form:form action="${pageContext.request.contextPath}/register/registeruser" method="post" commandName="customer">
 
-                                <form name="loginForm" action="<c:url value="/j_spring_security_check" />" method="post">
-                                    <div class="card-content">
-                                        <div class="input-group">
-                                            <span class="input-group-addon">
-                                                <i class="material-icons">face</i>
-                                            </span>
-                                            <input type="text" id="username" name="username" class="form-control" placeholder="Username" />
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <span class="text-primary text-uppercase">Your Information</span>
                                         </div>
-                                        <div class="input-group">
-                                            <span class="input-group-addon">
-                                                <i class="material-icons">lock_outline</i>
-                                            </span>
-                                            <input type="password" id="password" name="password" placeholder="Password" class="form-control" />
+                                        <div class="panel-body">
+                                            <div class="form-group">
+                                                <label for="name">Name</label> <form:errors path="customerName" cssStyle="color:#EA1E63;" />
+                                                <form:input path="customerName" type="text" value="" class="form-control" />
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="name">Email</label> <form:errors path="customerEmail" cssStyle="color:#EA1E63;" />
+                                                <form:input path="customerEmail" type="email" value="" class="form-control" />
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="name">Phone Number</label> <form:errors path="customerPhone" cssStyle="color:#EA1E63;" />
+                                                <form:input path="customerPhone" type="text" value="" class="form-control" />
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="footer text-center">
-                                        <input type="submit" value="Login Now" class="btn btn-primary btn-round" />
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <span class="text-primary text-uppercase">Login Information</span>
+                                        </div>
+                                        <div class="panel-body">
+                                            <div class="form-group">
+                                                <label for="name">Username</label> <form:errors path="username" cssStyle="color:#EA1E63;" />
+                                                <form:input path="username" type="text" value="" class="form-control" />
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="name">Password</label> <form:errors path="password" cssStyle="color:#EA1E63;" />
+                                                <form:password path="password" value="" class="form-control" />
+                                            </div>
+                                        </div>
                                     </div>
-                                    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
-                                </form>
-                                <c:if test="${not empty msg}">
-                                    <div class="text-center text-success">
-                                        <b>Alert:</b> ${msg}
+                                    <div>
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <span class="text-primary text-uppercase">Billing Information</span>
+                                            </div>
+                                            <div class="panel-body">   
+                                                <div class="form-group">
+                                                    <label for="name">Apartment Number</label> <form:errors path="billingAddress.apartmentNumber" cssStyle="color:#EA1E63;" />
+                                                    <form:input path="billingAddress.apartmentNumber" type="text" value="" class="form-control" />
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="name">Street Name</label> <form:errors path="billingAddress.streetName" cssStyle="color:#EA1E63;" />
+                                                    <form:input path="billingAddress.streetName" type="text" value="" class="form-control" />
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="name">City</label> <form:errors path="billingAddress.city" cssStyle="color:#EA1E63;" />
+                                                    <form:input path="billingAddress.city" type="text" value="" class="form-control" />
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="name">State/Province</label> <form:errors path="billingAddress.state" cssStyle="color:#EA1E63;" />
+                                                    <form:input path="billingAddress.state" type="text" value="" class="form-control" />
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="name">Country</label> <form:errors path="billingAddress.country" cssStyle="color:#EA1E63;" />
+                                                    <form:input path="billingAddress.country" type="text" value="" class="form-control" />
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="name">Postal Code</label> <form:errors path="billingAddress.postalCode" cssStyle="color:#EA1E63;" />
+                                                    <form:input path="billingAddress.postalCode" type="text" value="" class="form-control" />
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                </c:if>
-                                <c:if test="${not empty error}">
-                                    <div class="text-center text-danger">
-                                        <b>Error Alert:</b> ${error}
+                                    <div>
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <span class="text-primary text-uppercase">Shipping Information</span>
+                                            </div>
+                                            <div class="panel-body">   
+                                                <div class="form-group">
+                                                    <label for="name">Apartment Number</label> <form:errors path="shippingAddress.apartmentNumber" cssStyle="color:#EA1E63;" />
+                                                    <form:input path="shippingAddress.apartmentNumber" type="text" value="" class="form-control" />
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="name">Street Name</label> <form:errors path="shippingAddress.streetName" cssStyle="color:#EA1E63;" />
+                                                    <form:input path="shippingAddress.streetName" type="text" value="" class="form-control" />
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="name">City</label> <form:errors path="shippingAddress.city" cssStyle="color:#EA1E63;" />
+                                                    <form:input path="shippingAddress.city" type="text" value="" class="form-control" />
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="name">State/Province</label> <form:errors path="shippingAddress.state" cssStyle="color:#EA1E63;" />
+                                                    <form:input path="shippingAddress.state" type="text" value="" class="form-control" />
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="name">Country</label> <form:errors path="shippingAddress.country" cssStyle="color:#EA1E63;" />
+                                                    <form:input path="shippingAddress.country" type="text" value="" class="form-control" />
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="name">Postal Code</label> <form:errors path="billingAddress.postalCode" cssStyle="color:#EA1E63;" />
+                                                    <form:input path="shippingAddress.postalCode" type="text" value="" class="form-control" />
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                </c:if>
-                            </div>
+                                    <input type="submit" value="Register Now" class="btn btn-primary btn-round" />
+                                </div>
+                                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+                            </form:form>
+                            <c:if test="${not empty msg}">
+                                <div class="text-center text-success">
+                                    <b>Alert:</b> ${msg}
+                                </div>
+                            </c:if>
+                            <c:if test="${not empty error}">
+                                <div class="text-center text-danger">
+                                    <b>Error Alert:</b> ${error}
+                                </div>
+                            </c:if>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <%@include  file="/WEB-INF/jsp/include/footer.jsp" %>
-
     </div>
+    <%@include  file="/WEB-INF/jsp/include/footer.jsp" %>
+
+</div>
 
 </body>
 

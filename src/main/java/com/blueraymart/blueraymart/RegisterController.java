@@ -8,8 +8,11 @@ package com.blueraymart.blueraymart;
 import com.blueraymart.model.BillingAddress;
 import com.blueraymart.model.Customer;
 import com.blueraymart.model.ShippingAddress;
+import com.blueraymart.service.CustomerService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
@@ -18,6 +21,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 @Controller
 public class RegisterController {
+    
+    @Autowired
+    private CustomerService customerService;
     
     @RequestMapping("/register")
     public String registerCustomer(Model model){
@@ -32,5 +38,13 @@ public class RegisterController {
         model.addAttribute("customer", customer);
         
         return "register";
+    }
+    
+    @RequestMapping("/register/registeruser")
+    public String registerCustomerSave(@ModelAttribute("customer") Customer customer, Model model){
+        customer.setEnabled(true);
+        customerService.addCustomer(customer);
+        
+        return "login";
     }
 }
