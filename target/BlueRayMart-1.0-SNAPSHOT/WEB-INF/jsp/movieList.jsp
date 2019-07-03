@@ -46,47 +46,47 @@
                 <footer>
                     <ul class="pull-center">
                         <li>
-                            <a href="#pablo">
+                            <a href="/movie/movieList/Action">
                                 Action
                             </a>
                         </li>
                         <li>
-                            <a href="#pablo">
-                                Action
+                            <a href="/movie/movieList/Adventure">
+                                Adventure
                             </a>
                         </li>
                         <li>
-                            <a href="#pablo">
+                            <a href="/movie/movieList/Animation">
                                 Animation
                             </a>
                         </li>
                         <li>
-                            <a href="#pablo">
+                            <a href="/movie/movieList/Comedy">
                                 Comedy
                             </a>
                         </li>
                         <li>
-                            <a href="#pablo">
+                            <a href="/movie/movieList/Crime">
                                 Crime
                             </a>
                         </li>
                         <li>
-                            <a href="#pablo">
+                            <a href="/movie/movieList/Drama">
                                 Drama
                             </a>
                         </li>
                         <li>
-                            <a href="#pablo">
+                            <a href="/movie/movieList/Fantasy">
                                 Fantasy
                             </a>
                         </li>
                         <li>
-                            <a href="#pablo">
+                            <a href="/movie/movieList/Historical">
                                 Historical
                             </a>
                         </li>
                         <li>
-                            <a href="#pablo">
+                            <a href="/movie/movieList/Horror">
                                 Horror
                             </a>
                         </li>
@@ -101,7 +101,7 @@
                                 <div class="col-md-4">
                                     <div class="card card-product card-plain no-shadow" data-colored-shadow="false">
                                         <div class="card-image">
-                                            <a href="<spring:url value="/movieList/viewMovie/${movie.movieId}"/>">
+                                            <a href="<spring:url value="/movie/movieList/viewMovie/${movie.movieId}"/>">
                                                 <img src="<c:url value="/resources/images/${movie.movieId}.png"/>" alt="..."/>
                                             </a>
                                         </div>
@@ -121,7 +121,7 @@
                                                     <span class="price"> LKR ${movie.moviePrice}</span>
                                                 </div>
 
-                                                <a href="<spring:url value="/movieList/viewMovie/${movie.movieId}"/>">
+                                                <a href="<spring:url value="/movie/movieList/viewMovie/${movie.movieId}"/>">
                                                     <button class="btn btn-rose pull-right" rel="tooltip" title="Added to Cart" data-placement="top">
                                                         Buy Now
                                                     </button>
@@ -155,30 +155,6 @@
                                 too, so no worries about this.
                             </p>
                         </div>
-
-                        <div class="card card-raised card-form-horizontal">
-                            <div class="card-content">
-                                <form method="" action="">
-                                    <div class="row">
-                                        <div class="col-sm-8">
-
-                                            <div class="input-group">
-                                                <span class="input-group-addon">
-                                                    <i class="material-icons">mail</i>
-                                                </span>
-                                                <div class="form-group is-empty">
-                                                    <input type="email" value="" placeholder="Your Email..."
-                                                           class="form-control"><span class="material-input"></span></div>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-4">
-                                            <button type="button" class="btn btn-rose btn-block">Subscribe</button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-
                     </div>
                 </div>
             </div>

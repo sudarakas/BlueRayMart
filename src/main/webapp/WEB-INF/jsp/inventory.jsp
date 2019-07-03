@@ -25,50 +25,7 @@
 
     </head>
     <body class="ecommerce-page">
-        <nav class="navbar navbar-default navbar-transparent navbar-fixed-top navbar-color-on-scroll" color-on-scroll="100"
-             id="sectionsNav">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="">BlueRay Mart</a>
-                </div>
-
-                <div class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li>
-                            <a href="/">
-                                <i class="material-icons">home</i> Home
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/">
-                                <i class="material-icons">info</i> About Us
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/">
-                                <i class="material-icons">message</i> Contact Us
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/">
-                                Sign In
-                            </a>
-                        </li>
-                        <li class="button-container">
-                            <a href="" target="_blank" class="btn btn-primary">
-                                Sign Up
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+        <%@include  file="/WEB-INF/jsp/include/nav.jsp" %>
 
         <div class="page-header header-filter header-small" data-parallax="true"
              style="background-image: url('/resources/images/cover-<%= (int) (Math.random() * 5) %>.jpg');">
@@ -91,7 +48,7 @@
                         <div class="title">
                             <h3>Inventory</h3>
                         </div>
-                        <div class="text-right"><a href="/admin/inventory/addmovie" class="btn btn-success">Add Movie</a></div>
+                        <div class="text-right"><a href="/admin/movie/addmovie" class="btn btn-success">Add Movie</a></div>
                         <div class="row">
                             <div class="col-md-12">
                                 <h4>Movie Inventory</h4>
@@ -137,10 +94,10 @@
                                                         <button type="button" rel="tooltip" class="btn btn-success btn-round" onclick="window.open('<spring:url value="/movieList/viewMovie/${movie.movieId}"/>')">
                                                             <i class='material-icons'> call_made </i>
                                                         </button>
-                                                        <button type="button" rel="tooltip" class="btn btn-link btn-round" onclick="window.open('<spring:url value="/admin/inventory/editMovie/${movie.movieId}"/>')">
+                                                        <button type="button" rel="tooltip" class="btn btn-link btn-round" onclick="window.open('<spring:url value="/admin/movie/editMovie/${movie.movieId}"/>')">
                                                             <i class="material-icons">edit</i>
                                                         </button>
-                                                        <button type="button" rel="tooltip" class="btn btn-danger btn-round" onclick="window.open('<spring:url value="/admin/inventory/deleteMovie/${movie.movieId}"/>')">
+                                                        <button type="button" rel="tooltip" class="btn btn-danger btn-round" onclick="window.open('<spring:url value="/admin/movie/deleteMovie/${movie.movieId}"/>')">
                                                             <i class="material-icons">close</i>
                                                         </button>
                                                     </td>

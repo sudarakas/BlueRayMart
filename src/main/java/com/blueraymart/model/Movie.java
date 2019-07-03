@@ -31,7 +31,7 @@ public class Movie implements Serializable{
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private String movieId;
+    private int movieId;
     
     @NotEmpty(message = "Movie Name shouldn't be empty")
     private String movieName;
@@ -63,12 +63,12 @@ public class Movie implements Serializable{
     @OneToMany(mappedBy = "movie", cascade = CascadeType.ALL,fetch = FetchType.EAGER)
     @JsonIgnore
     private List<CartItem> cartItemList;
-    
-    public String getMovieId() {
+
+    public int getMovieId() {
         return movieId;
     }
 
-    public void setMovieId(String movieId) {
+    public void setMovieId(int movieId) {
         this.movieId = movieId;
     }
     

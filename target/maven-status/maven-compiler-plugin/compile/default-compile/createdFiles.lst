@@ -8,10 +8,12 @@ com\blueraymart\model\Users.class
 com\blueraymart\blueraymart\MovieController.class
 com\blueraymart\blueraymart\CartItemController.class
 com\blueraymart\model\Movie.class
+com\blueraymart\blueraymart\admin\AdminHomeController.class
 com\blueraymart\blueraymart\HomeController.class
 com\blueraymart\dao\impl\MovieDaoImp.class
 com\blueraymart\model\ShippingAddress.class
 com\blueraymart\model\CartItem.class
+com\blueraymart\blueraymart\admin\AdminMovieController.class
 com\blueraymart\dao\MovieDao.class
 com\blueraymart\dao\CartDao.class
 com\blueraymart\model\Customer.class

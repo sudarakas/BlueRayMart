@@ -73,7 +73,7 @@
                                                 <span class="price"> LKR ${movie.moviePrice}</span>
                                             </div>
 
-                                            <a href="<spring:url value="/movieList/viewMovie/${movie.movieId}"/>">
+                                            <a href="<spring:url value="/movie/movieList/viewMovie/${movie.movieId}"/>">
                                                 <button class="btn btn-rose pull-right"  data-placement="top">
                                                     Buy Now
                                                 </button>
@@ -103,7 +103,7 @@
                             <p class="card-description">
                                 Animated Films are ones in which individual drawings, paintings, or illustrations are photographed frame by frame (stop-frame cinematography). 
                             </p>
-                            <a href="/movieList/Animation" class="btn btn-primary btn-round">
+                            <a href="/movie/movieList/Animation" class="btn btn-primary btn-round">
                                 <i class="material-icons">subject</i> More
                             </a>
                         </div>
@@ -121,7 +121,7 @@
                             <p class="card-description">
                                 Action film is a film genre in which the protagonist or protagonists are thrust into a series of challenges that typically include violence.
                             </p>
-                            <a href="/movieList/Action" class="btn btn-primary btn-round">
+                            <a href="/movie/movieList/Action" class="btn btn-primary btn-round">
                                 <i class="material-icons">subject</i> More
                             </a>
                         </div>
@@ -139,7 +139,7 @@
                             <p class="card-description">
                                 Comedy is a genre of film in which the main emphasis is on humour. These films are designed to make the audience laugh through amusement.
                             </p>
-                            <a href="/movieList/Romance" class="btn btn-primary btn-round">
+                            <a href="/movie/movieList/Romance" class="btn btn-primary btn-round">
                                 <i class="material-icons">subject</i> More
                             </a>
                         </div>
@@ -157,7 +157,7 @@
                             <p class="card-description">
                                 Comedy is a genre of film in which the main emphasis is on humour. These films are designed to make the audience laugh through amusement.
                             </p>
-                            <a href="/movieList/Comedy" class="btn btn-primary btn-round">
+                            <a href="/movie/movieList/Comedy" class="btn btn-primary btn-round">
                                 <i class="material-icons">subject</i> More
                             </a>
                         </div>
@@ -175,7 +175,7 @@
                             <p class="card-description">
                                 Comedy is a genre of film in which the main emphasis is on humour. These films are designed to make the audience laugh through amusement.
                             </p>
-                            <a href="/movieList/Horror" class="btn btn-primary btn-round">
+                            <a href="/movie/movieList/Horror" class="btn btn-primary btn-round">
                                 <i class="material-icons">subject</i> More
                             </a>
                         </div>
@@ -217,7 +217,7 @@
                         <p class="card-description">
                             ${upcommingMovie.movieDescription}
                         </p>
-                        <a href="<spring:url value="/movieList/viewMovie/${upcommingMovie.movieId}"/>" class="btn btn-rose btn-round">
+                        <a href="<spring:url value="/movie/movieList/viewMovie/${upcommingMovie.movieId}"/>" class="btn btn-rose btn-round">
                             <i class="material-icons">subject</i> More
                         </a>
                     </div>

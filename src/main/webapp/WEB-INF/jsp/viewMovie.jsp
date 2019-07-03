@@ -109,7 +109,7 @@
                             </div>
                         </div>
                         <c:set var="role" scope="page" value="${param.role}"/>
-                        <c:set var="url" scope="page" value="/movieList"/>
+                        <c:set var="url" scope="page" value="/movie/movieList"/>
                         <c:if test="${role='admin'}">
                             <c:set var="url" scope="page" value="/admin/inventory"/>
                        </c:if>

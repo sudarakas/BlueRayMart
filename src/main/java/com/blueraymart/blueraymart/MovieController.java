@@ -7,10 +7,12 @@ package com.blueraymart.blueraymart;
 
 import com.blueraymart.model.Movie;
 import com.blueraymart.service.MovieService;
+import java.io.IOException;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
@@ -29,6 +31,21 @@ public class MovieController {
         List<Movie> movies = movieService.getMovieList();
         model.addAttribute("movies", movies);
 
+        return "movieList";
+    }
+    
+    @RequestMapping("/movieList/viewMovie/{movieId}")
+    public String viewMovie(@PathVariable int movieId, Model model) throws IOException {
+        Movie movie = movieService.getMovieById(movieId);
+        model.addAttribute(movie);
+        return "viewMovie";
+    }
+    
+    @RequestMapping("/movieList/{movieGenre}")
+    public String getMoviesByGenere(@PathVariable String movieGenre, Model model) throws IOException {
+        List<Movie> movies = movieService.getMoviesByGenere(movieGenre);
+        model.addAttribute("movies", movies);
+        
         return "movieList";
     }
 }
