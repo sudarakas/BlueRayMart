@@ -76,4 +76,19 @@ public class CartResourceController {
         cartItem.setCart(cart);
         cartItemService.addCartItem(cartItem);
     }
+    
+    @RequestMapping(value = "/remove/{movieId}", method = RequestMethod.PUT)
+    @ResponseStatus(value = HttpStatus.NO_CONTENT)
+    public void removeItem(@PathVariable(value = "movieId") int movieId){
+        
+        CartItem cartItem = cartItemService.getCartItemByMovieId(movieId);
+        cartItemService.removeCartItem(cartItem);
+    }
+    
+    @RequestMapping(value = "/{cartId}", method = RequestMethod.DELETE)
+    @ResponseStatus(value = HttpStatus.NO_CONTENT)
+    public void clearCart(@PathVariable(value = "cartId") int cartId){
+        Cart cart = cartService.getCartById(cartId);
+        cartItemService.removeCart(cart);
+    }
 }

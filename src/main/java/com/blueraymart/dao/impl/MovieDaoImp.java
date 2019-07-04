@@ -12,8 +12,11 @@ import javax.persistence.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.ResponseStatus;
 
 /**
  *
@@ -100,5 +103,13 @@ public class MovieDaoImp implements MovieDao {
 
         return movies;
     }
+    
+    @ExceptionHandler(IllegalArgumentException.class)
+    @ResponseStatus(value = HttpStatus.BAD_REQUEST, reason = "Illegal request!")
+    public void handleClientErrors (Exception e) {}
+
+    @ExceptionHandler(Exception.class)
+    @ResponseStatus(value = HttpStatus.INTERNAL_SERVER_ERROR, reason = "Server Error!")
+    public void handleServerErrors (Exception e) {}
 
 }

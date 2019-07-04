@@ -37,6 +37,11 @@ public class CartItemServiceImpl implements CartItemService{
         cartItemDao.removeCart(cart);
     }
 
+    @Override
+    public CartItem getCartItemByMovieId(int movieId) {
+        return cartItemDao.getCartItemByMovieId(movieId);
+    }
+
     
     
 }

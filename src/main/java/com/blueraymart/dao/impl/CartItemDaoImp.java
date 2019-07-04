@@ -10,6 +10,7 @@ import com.blueraymart.dao.CartItemDao;
 import com.blueraymart.model.Cart;
 import com.blueraymart.model.CartItem;
 import java.util.List;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,6 +48,16 @@ public class CartItemDaoImp implements CartItemDao{
         for(CartItem item : cartItems){
             removeCartItem(item);
         }
+    }
+
+    @Override
+    public CartItem getCartItemByMovieId(int movieId) {
+        Session session = sessionFactory.getCurrentSession();
+        Query query = session.createQuery("from CartItem where movieId = ?");
+        query.setInteger(0, movieId);
+        session.flush();
+        
+        return  (CartItem) query.uniqueResult();
     }
 
     

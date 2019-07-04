@@ -144,22 +144,6 @@
         </div>
         <!-- end-main-raised -->
 
-        <div class="subscribe-line subscribe-line-image" data-parallax="true">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 col-md-offset-3">
-                        <div class="text-center">
-                            <h3 class="title">Subscribe to our Newsletter</h3>
-                            <p class="description">
-                                Join our newsletter and get new movie release news in your inbox every week! We hate spam
-                                too, so no worries about this.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
         <%@include file="/WEB-INF/jsp/include/footer.jsp" %>
         <!--   Core JS Files   -->
         <script src="<c:url value="/resources/js/jquery.min.js" />" type="text/javascript"></script>

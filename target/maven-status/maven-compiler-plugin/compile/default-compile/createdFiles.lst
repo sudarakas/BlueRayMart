@@ -23,7 +23,6 @@ com\blueraymart\blueraymart\RegisterController.class
 com\blueraymart\service\impl\MovieServiceImpl.class
 com\blueraymart\service\CartItemService.class
 com\blueraymart\service\CustomerService.class
-com\blueraymart\blueraymart\movieId.class
 com\blueraymart\dao\impl\CartDaoImp.class
 com\blueraymart\model\Movie.class
 com\blueraymart\blueraymart\admin\AdminHomeController.class
