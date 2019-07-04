@@ -104,12 +104,6 @@ public class MovieDaoImp implements MovieDao {
         return movies;
     }
     
-    @ExceptionHandler(IllegalArgumentException.class)
-    @ResponseStatus(value = HttpStatus.BAD_REQUEST, reason = "Illegal request!")
-    public void handleClientErrors (Exception e) {}
-
-    @ExceptionHandler(Exception.class)
-    @ResponseStatus(value = HttpStatus.INTERNAL_SERVER_ERROR, reason = "Server Error!")
-    public void handleServerErrors (Exception e) {}
+    
 
 }
