@@ -5,8 +5,10 @@
  */
 package com.blueraymart.service.impl;
 
+import com.blueraymart.dao.CartDao;
 import com.blueraymart.model.Cart;
 import com.blueraymart.service.CartService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
@@ -15,15 +17,18 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class CartServiceImpl implements CartService{
-
+    
+    @Autowired
+    private CartDao cartDao;
+    
     @Override
     public Cart getCartById(int cartId) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return cartDao.getCartById(cartId);
     }
 
     @Override
     public void update(Cart cart) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        cartDao.update(cart);
     }
     
 }

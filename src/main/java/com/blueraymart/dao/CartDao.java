@@ -13,8 +13,6 @@ import com.blueraymart.model.Cart;
  */
 public interface CartDao {
     
-    Cart createCart(Cart cart);
-    Cart readCart(String cartId);
-    void updateCart(String cartId, Cart cart);
-    void deleteCart(String cartId);
+    Cart getCartById(int cartId);
+    void update(Cart cart);
 }
