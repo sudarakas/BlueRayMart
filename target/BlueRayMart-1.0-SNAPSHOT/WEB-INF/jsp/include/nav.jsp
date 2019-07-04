@@ -60,10 +60,17 @@
                 <li class="button-container">
                     <c:choose>
                         <c:when test="${pageContext.request.userPrincipal.name != null}">
-                            <a href="/movie/movieList" class="btn btn-primary">
-                                Buy Now
-                            </a>
-                        </c:when> 
+                            <c:if test="${pageContext.request.userPrincipal.name != 'admin'}">
+                                <a href="/movie/movieList" class="btn btn-primary">
+                                    Buy Now
+                                </a>
+                            </c:if>
+                            <c:if test="${pageContext.request.userPrincipal.name == 'admin'}">
+                                <a href="/admin/" class="btn btn-primary">
+                                    Admin Panel
+                                </a>
+                            </c:if>
+                        </c:when>
                         <c:otherwise>
                             <a href="/register" target="_blank" class="btn btn-primary">
                                 Sign Up
