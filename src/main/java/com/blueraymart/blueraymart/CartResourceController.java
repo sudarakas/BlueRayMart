@@ -19,6 +19,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.web.bind.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -91,4 +92,12 @@ public class CartResourceController {
         Cart cart = cartService.getCartById(cartId);
         cartItemService.removeCart(cart);
     }
+    
+    @ExceptionHandler(IllegalArgumentException.class)
+    @ResponseStatus(value = HttpStatus.BAD_REQUEST, reason = "Illegal request!")
+    public void handleClientErrors (Exception e) {}
+
+    @ExceptionHandler(Exception.class)
+    @ResponseStatus(value = HttpStatus.INTERNAL_SERVER_ERROR, reason = "Server Error!")
+    public void handleServerErrors (Exception e) {}
 }
