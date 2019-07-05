@@ -96,7 +96,7 @@
                             </div>
                         </div><!--  end acordeon -->
                         <h3 class="text-rose">Available Stock:  ${movie.movieUnitinStock} </h3>
-                        <div class="row pick-size">
+<!--                        <div class="row pick-size">
                             <div class="col-md-6 col-sm-6">
                                 <label>No of Copies</label>
                                 <select class="selectpicker" data-style="select-with-transition" data-size="7">
@@ -107,15 +107,16 @@
                                     <option value="5">5</option>
                                 </select>
                             </div>
-                        </div>
+                        </div>-->
                         <c:set var="role" scope="page" value="${param.role}"/>
                         <c:set var="url" scope="page" value="/movie/movieList"/>
                         <c:if test="${role='admin'}">
                             <c:set var="url" scope="page" value="/admin/inventory"/>
                        </c:if>
-                        <div class="row text-right" ng-controller="cartCtrl">
+
+                        <div class="row text-right" >
                             <button class="btn btn-warning btn-round" rel="tooltip" onclick="window.open('<c:url value="${url}"/>','_self')" title="Back to Shop">Back &nbsp;<i class="material-icons">subject</i></button>
-                            <button class="btn btn-rose btn-round" rel="tooltip" title="Added to Cart" ng-click="addToCart('${movie.movieId}','${100}')">Add to Cart &nbsp;<i class="material-icons">shopping_cart</i></button>
+                            <button class="btn btn-rose btn-round" ng-controller="cartCtrl" ng-click="addToCart('${movie.movieId}')">Add to Cart &nbsp;<i class="material-icons">shopping_cart</i></button>
                         </div>
                         
                     </div>

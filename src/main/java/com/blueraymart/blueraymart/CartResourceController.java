@@ -52,21 +52,25 @@ public class CartResourceController {
         return cartService.getCartById(cartId);
     }
     
-    @RequestMapping(value = "/add/{movieId}", method = RequestMethod.POST)
+    @RequestMapping(value = "/add/{movieId}", method = RequestMethod.PUT)
     @ResponseStatus(value = HttpStatus.NO_CONTENT)
-    public void addItem(@PathVariable(value = "movieId") int movieId,@AuthenticationPrincipal User activeUser){
+    public int addItem(@PathVariable(value = "movieId") int movieId,@AuthenticationPrincipal User activeUser){
         
+
         Customer customer = customerService.getCustomerByUsername(activeUser.getUsername());
         Cart cart = customer.getCart();
         Movie movie = movieService.getMovieById(movieId);
         List<CartItem> cartItems = cart.getCartItems();
         
-        for (int i = 0; i <cartItems.size(); i++) {
-            if(movie.getMovieId()==cartItems.get(i).getMovie().getMovieId()){
-                CartItem cartItem = cartItems.get(i);
+        
+        for (CartItem item : cartItems) {
+            if(movie.getMovieId()==item.getMovie().getMovieId()){
+                CartItem cartItem = item;          
                 cartItem.setQuantity(cartItem.getQuantity()+1);
                 cartItem.setTotalPrice(movie.getMoviePrice()*cartItem.getQuantity());
                 cartItemService.addCartItem(cartItem);
+                
+                return 0;
             }
         }
         
@@ -76,6 +80,9 @@ public class CartResourceController {
         cartItem.setTotalPrice(movie.getMoviePrice()*cartItem.getQuantity());
         cartItem.setCart(cart);
         cartItemService.addCartItem(cartItem);
+        
+        return 0;
+        
     }
     
     @RequestMapping(value = "/remove/{movieId}", method = RequestMethod.PUT)

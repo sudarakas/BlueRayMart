@@ -1,6 +1,8 @@
 D:\Project 3-1\BlueRayMart\src\main\java\com\blueraymart\model\Movie.java
+D:\Project 3-1\BlueRayMart\src\main\java\com\blueraymart\service\CustomerOrderService.java
 D:\Project 3-1\BlueRayMart\src\main\java\com\blueraymart\dao\impl\CustomerDaoImp.java
 D:\Project 3-1\BlueRayMart\src\main\java\com\blueraymart\service\impl\CartItemServiceImpl.java
+D:\Project 3-1\BlueRayMart\src\main\java\com\blueraymart\dao\impl\CustomerOrderDaoImp.java
 D:\Project 3-1\BlueRayMart\src\main\java\com\blueraymart\blueraymart\CartController.java
 D:\Project 3-1\BlueRayMart\src\main\java\com\blueraymart\service\impl\CartServiceImpl.java
 D:\Project 3-1\BlueRayMart\src\main\java\com\blueraymart\blueraymart\CartResourceController.java
@@ -18,14 +20,17 @@ D:\Project 3-1\BlueRayMart\src\main\java\com\blueraymart\dao\CartItemDao.java
 D:\Project 3-1\BlueRayMart\src\main\java\com\blueraymart\model\CustomerOrder.java
 D:\Project 3-1\BlueRayMart\src\main\java\com\blueraymart\model\ShippingAddress.java
 D:\Project 3-1\BlueRayMart\src\main\java\com\blueraymart\dao\impl\MovieDaoImp.java
+D:\Project 3-1\BlueRayMart\src\main\java\com\blueraymart\service\impl\CustomerOrderServiceImpl.java
 D:\Project 3-1\BlueRayMart\src\main\java\com\blueraymart\service\CartItemService.java
 D:\Project 3-1\BlueRayMart\src\main\java\com\blueraymart\blueraymart\LoginController.java
+D:\Project 3-1\BlueRayMart\src\main\java\com\blueraymart\dao\CustomerOrderDao.java
 D:\Project 3-1\BlueRayMart\src\main\java\com\blueraymart\dao\impl\CartItemDaoImp.java
 D:\Project 3-1\BlueRayMart\src\main\java\com\blueraymart\dao\MovieDao.java
 D:\Project 3-1\BlueRayMart\src\main\java\com\blueraymart\model\CartItem.java
 D:\Project 3-1\BlueRayMart\src\main\java\com\blueraymart\model\Cart.java
 D:\Project 3-1\BlueRayMart\src\main\java\com\blueraymart\blueraymart\CartItemController.java
 D:\Project 3-1\BlueRayMart\src\main\java\com\blueraymart\service\impl\CustomerServiceImpl.java
+D:\Project 3-1\BlueRayMart\src\main\java\com\blueraymart\blueraymart\OrderController.java
 D:\Project 3-1\BlueRayMart\src\main\java\com\blueraymart\model\BillingAddress.java
 D:\Project 3-1\BlueRayMart\src\main\java\com\blueraymart\service\impl\MovieServiceImpl.java
 D:\Project 3-1\BlueRayMart\src\main\java\com\blueraymart\blueraymart\HomeController.java

@@ -37,12 +37,14 @@
                             <div class="text-right">
                                 <a ng-click="clearCart()" class="btn btn-danger">Clear Cart</a>
                                 <a href="/admin/inventory/addmovie" class="btn btn-success">Buy More</a>
+                                <h5>{{returnSubTotal()}}</h5>
                             </div>
                             <div class="row">
                                 <div class="col-md-12">
                                     <h4>Movie Cart</h4>
                                 </div>
                                 <div class="col-md-12">
+                                    
                                     <div class="table-responsive">
                                         <table class="table">
                                             <thead>

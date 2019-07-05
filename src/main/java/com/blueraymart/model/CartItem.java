@@ -69,7 +69,13 @@ public class CartItem implements Serializable{
     public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
-
+    
+    public void setQuantityByOne() {
+        this.quantity += 1;
+    }
+    public void setDownQuantityByOne(){
+        this.quantity -= 1;
+    }
     public double getTotalPrice() {
         return totalPrice;
     }

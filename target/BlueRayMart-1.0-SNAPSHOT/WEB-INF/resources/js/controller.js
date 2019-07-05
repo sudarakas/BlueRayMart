@@ -6,35 +6,43 @@
 
 var cartApp = angular.module("cartApp", []);
 
-cartApp.controller("cartCtrl", function($scope, $http){
-    
-    
-    $scope.refreshCart = function (cartId){
-         $http.get("/rest/cart/"+$scope.cartId).success(function (data){
-             $scope.cart=data;
-         });
+cartApp.controller("cartCtrl", function ($scope, $http) {
+
+
+    $scope.refreshCart = function () {
+        $http.get("/rest/cart/" + $scope.cartId).success(function (data) {
+            $scope.cart = data;
+        });
     };
-    
-    $scope.clearCart = function (){
-        $http.delete("/rest/cart/"+$scope.cartId).success($scope.refreshCart($scope.cartId));
+
+    $scope.clearCart = function () {
+        $http.delete("/rest/cart/" + $scope.cartId).success($scope.refreshCart());
     };
-    
-    $scope.initCartId = function (cartId){
+
+    $scope.initCartId = function (cartId) {
         $scope.cartId = cartId;
         $scope.refreshCart(cartId);
     };
-    
+
     $scope.addToCart = function (movieId){
-        $http.put("/rest/cart/add/"+movieId).success(function (data){
-             $scope.refreshCart($http.get("/rest/cart/cartId"));
+        $http.put("/rest/cart/add/"+movieId).success(function(){
              alert("Movie successfully add to the cart");
          });
     };
-    
-    $scope.removeFromCart = function (movieId){
-        $http.put("/rest/cart/remove/"+movieId).success(function (data){
-             $scope.refreshCart($http.get("/rest/cart/cartId"));
-             //alert("Movie successfully add to the cart")
-         });
+
+
+    $scope.removeFromCart = function (movieId) {
+        $http.put("/rest/cart/remove/" + movieId).success(function (data) {
+            $scope.refreshCart();
+        });
+    };
+
+    $scope.returnSubTotal = function () {
+        var subTotal = 0;
+        for (var i = 0; i < $scope.cart.cartItems.length; i++) {
+            subTotal += $scope.cart.cartItems[i].totalPrice;
+        }
+
+        return subTotal;
     };
 });

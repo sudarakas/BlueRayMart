@@ -38,7 +38,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="<c:url value="/cart"/>">
+                    <a href="<c:url value="/customer/cart"/>">
                         <i class='material-icons'>person</i> Cart
                     </a>
                 </li>

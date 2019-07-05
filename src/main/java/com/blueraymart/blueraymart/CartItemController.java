@@ -16,19 +16,19 @@ import org.springframework.web.bind.annotation.RequestMethod;
  *
  * @author NanoX
  */
-@Controller
-@RequestMapping("/cart")
-public class CartItemController {
-    
-    @RequestMapping
-    public String get(HttpServletRequest request){
-        return "redirect:/cart/"+request.getSession(true).getId();
-    }
-    
-    @RequestMapping(value = "/{cartId}", method = RequestMethod.GET)
-    public String getCart(@PathVariable (value = "cartId") String cartId, Model model){
-        model.addAttribute("cartId", cartId);
-        
-        return "cart";
-    }
-}
+//@Controller
+//@RequestMapping("/cart")
+//public class CartItemController {
+//    
+//    @RequestMapping
+//    public String get(HttpServletRequest request){
+//        return "redirect:/cart/"+request.getSession(true).getId();
+//    }
+//    
+//    @RequestMapping(value = "/{cartId}", method = RequestMethod.GET)
+//    public String getCart(@PathVariable (value = "cartId") String cartId, Model model){
+//        model.addAttribute("cartId", cartId);
+//        
+//        return "cart";
+//    }
+//}
