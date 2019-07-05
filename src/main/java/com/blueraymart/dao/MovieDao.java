@@ -19,6 +19,7 @@ public interface MovieDao {
     void addMovie(Movie movie);
     void editMovie(Movie movie);
     void deleteMovie(Movie movie);
+    void updateMovieUnitinStock(int amount);
     List<Movie> getLatestMovies();
     List<Movie> getUpcomingMovies();
     List<Movie> getMoviesByGenere(String Genere);

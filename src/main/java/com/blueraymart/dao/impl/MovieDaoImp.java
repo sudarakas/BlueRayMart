@@ -103,6 +103,12 @@ public class MovieDaoImp implements MovieDao {
 
         return movies;
     }
+
+    @Override
+    public void updateMovieUnitinStock(int amount) {
+        Session session = sessionFactory.getCurrentSession();
+        session.update(this);
+    }
     
     
 

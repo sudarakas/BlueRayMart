@@ -7,6 +7,7 @@ package com.blueraymart.dao.impl;
 
 import com.blueraymart.dao.CartDao;
 import com.blueraymart.model.Cart;
+import java.io.IOException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,6 +36,17 @@ public class CartDaoImp implements CartDao{
     public void update(Cart cart) {
         int cartId = cart.getCartId();
         //double subTotal = cart.getSubTotal();
+    }
+
+    @Override
+    public Cart validate(int cartId) throws IOException {
+        Cart cart=getCartById(cartId);
+        if(cart.getCartItems().size()==0 || cart==null){
+            throw  new IOException(cartId+"");
+        }
+        
+        update(cart);
+        return cart;
     }
     
 }

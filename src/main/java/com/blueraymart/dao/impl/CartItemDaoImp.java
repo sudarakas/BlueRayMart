@@ -34,6 +34,13 @@ public class CartItemDaoImp implements CartItemDao{
         session.saveOrUpdate(cartItem);
         session.flush();
     }
+    
+    public void updateCartItem(CartItem cartItem) {
+        Session session = sessionFactory.getCurrentSession();
+        session.delete(cartItem);
+        session.saveOrUpdate(cartItem);
+        session.flush();
+    }
 
     @Override
     public void removeCartItem(CartItem cartItem) {

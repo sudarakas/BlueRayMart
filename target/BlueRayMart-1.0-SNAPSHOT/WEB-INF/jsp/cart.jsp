@@ -10,6 +10,7 @@
 <!DOCTYPE html>
 <html>
     <%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+    <%@taglib prefix="spring" uri="http://www.springframework.org/tags"%>
     <script src="<c:url value="/resources/js/angular.min.js" />" type="text/javascript"></script>
     <script src="<c:url value="/resources/js/controller.js"/>" type="text/javascript"></script>
     <%@include file="/WEB-INF/jsp/include/viewHeader.jsp" %>
@@ -36,7 +37,7 @@
                             </div>
                             <div class="text-right">
                                 <a ng-click="clearCart()" class="btn btn-danger">Clear Cart</a>
-                                <a href="/admin/inventory/addmovie" class="btn btn-success">Buy More</a>
+                               <a href="<spring:url value="/order/${cartId}"/>">Checkout</a>
                                 <h5>{{returnSubTotal()}}</h5>
                             </div>
                             <div class="row">

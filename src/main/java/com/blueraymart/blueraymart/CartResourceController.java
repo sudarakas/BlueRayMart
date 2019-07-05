@@ -65,7 +65,8 @@ public class CartResourceController {
         
         for (CartItem item : cartItems) {
             if(movie.getMovieId()==item.getMovie().getMovieId()){
-                CartItem cartItem = item;          
+                CartItem cartItem = item;
+                cartItem.setQuantity(0);
                 cartItem.setQuantity(cartItem.getQuantity()+1);
                 cartItem.setTotalPrice(movie.getMoviePrice()*cartItem.getQuantity());
                 cartItemService.addCartItem(cartItem);
