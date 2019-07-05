@@ -14,33 +14,26 @@
     <%@include file="/WEB-INF/jsp/include/viewHeader.jsp" %>
 
     <div class="page-header header-filter" data-parallax="true" filter-color="rose" style="background-image: url('/resources/images/cover-<%= (int) (Math.random() * 5)%>.jpg');">
-        <div class="container">
-            <div class="row title-row">
-                <div class="col-md-4 col-md-offset-8">
-                    <button class="btn btn-white pull-right"><i class="material-icons">shopping_cart</i> 0 Items</button>
-                </div>
-            </div>
-        </div>
     </div>
 
     <div class="section section-gray">
         <div class="container">
             <div class="section">
-                <h3 class="text-primary text-uppercase">Invalid Attempt!</h3>
+                <h3 class="text-primary text-uppercase text-center">Invalid Attempt!</h3>
             </div>
             <div class="container-wrapper">
                 <div class="container">
                     <section>
                         <div class="jumbotron">
-                            <div class="container">
+                            <div class="container text-center">
                                 <p>Please contact us!</p>
                             </div>
                         </div>
                     </section>
 
                     <section class="container">
-                        <p>
-                            <a href="<spring:url value="/" />" class="btn btn-primary">Home</a>
+                        <p class="text-center">
+                            <a href="/" class="btn btn-primary">Home</a>
                         </p>
                     </section>
 

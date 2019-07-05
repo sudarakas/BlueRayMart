@@ -15,8 +15,15 @@
 
     <div class="page-header header-filter" data-parallax="true" filter-color="rose" style="background-image: url('/resources/images/cover-<%= (int) (Math.random() * 5)%>.jpg');">
         <div class="container">
-            <h1 class="text-center title">Place Your Order</h1>
-        </div>
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <div class="brand">
+                            <h1 class="title">Place Your Order</h1>
+                            <h4>Free global delivery for all movies. Use coupon <b>uwuLife</b> for an extra 25% Off</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
     </div>
 
     <div class="section section-gray">
@@ -80,7 +87,7 @@
                     </div>
                                 <input type="hidden" name="_flowExecutionKey" />
                 </div>
-                                <input type="submit" value="Next"  name="_eventId_customerInfoCollected" class="btn btn-primary btn-round" />
+                                <input type="submit" value="Next"  name="_eventId_customerInfoCollected" class="btn btn-primary" />
                                 <button class="btn btn-danger" name="_eventId_cancel">Cancel</button>
         </div>
             <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />

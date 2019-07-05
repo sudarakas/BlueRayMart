@@ -37,8 +37,8 @@
                             </div>
                             <div class="text-right">
                                 <a ng-click="clearCart()" class="btn btn-danger">Clear Cart</a>
-                               <a href="<spring:url value="/order/${cartId}"/>">Checkout</a>
-                                <h5>{{returnSubTotal()}}</h5>
+                                <a href="<spring:url value="/order/${cartId}"/>" class="btn btn-white">Checkout</a>
+                                <h5>Total: {{returnSubTotal()}}</h5>
                             </div>
                             <div class="row">
                                 <div class="col-md-12">

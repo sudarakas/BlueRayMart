@@ -7,6 +7,7 @@ package com.blueraymart.dao.impl;
 
 import com.blueraymart.dao.CartDao;
 import com.blueraymart.model.Cart;
+import com.blueraymart.service.CustomerOrderService;
 import java.io.IOException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -25,6 +26,9 @@ public class CartDaoImp implements CartDao{
     @Autowired
     private SessionFactory sessionFactory;
     
+    @Autowired
+    private CustomerOrderService customerOrderService;
+    
     @Override
     public Cart getCartById(int cartId) {
         Session session = sessionFactory.getCurrentSession();
@@ -35,7 +39,12 @@ public class CartDaoImp implements CartDao{
     @Override
     public void update(Cart cart) {
         int cartId = cart.getCartId();
-        //double subTotal = cart.getSubTotal();
+        double subTotal = customerOrderService.getCustomerOrderSubTotal(cartId);
+        cart.setSubTotal(subTotal);
+        
+        Session session = sessionFactory.getCurrentSession();
+        session.saveOrUpdate(cart);
+        session.flush();
     }
 
     @Override

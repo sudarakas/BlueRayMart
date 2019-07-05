@@ -5,6 +5,8 @@
 --%>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<jsp:useBean id="now" class="java.util.Date" />
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -14,13 +16,7 @@
     <%@include file="/WEB-INF/jsp/include/viewHeader.jsp" %>
 
     <div class="page-header header-filter" data-parallax="true" filter-color="rose" style="background-image: url('/resources/images/cover-<%= (int) (Math.random() * 5)%>.jpg');">
-        <div class="container">
-            <div class="row title-row">
-                <div class="col-md-4 col-md-offset-8">
-                    <button class="btn btn-white pull-right"><i class="material-icons">shopping_cart</i> 0 Items</button>
-                </div>
-            </div>
-        </div>
+        
     </div>
 
     <div class="section section-gray">
@@ -28,7 +24,7 @@
             <div class="section">
                 <h3 class="text-primary text-uppercase">Order Confirmation</h3>
                 <form:form commandName="order">
-                    <div class="well col-xs-10 col-sm-10 col-md-6 col-xs-offset-1 col-sm-offset-1 co-md-offset-3">
+                    <div class="well">
 
                         <div class="text-center">
                             <h1>Receipt</h1>
@@ -37,13 +33,13 @@
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <address>
                                     <strong>Shipping Address</strong><br>
-                                    ${order.cart.customer.shippingAddress.streetName}
-                                    <br>
                                     ${order.cart.customer.shippingAddress.apartmentNumber}
+                                    <br>
+                                    ${order.cart.customer.shippingAddress.streetName}
                                     <br>
                                     ${order.cart.customer.shippingAddress.city}, ${order.cart.customer.shippingAddress.state}
                                     <br>
-                                    ${order.cart.customer.shippingAddress.country}, ${order.cart.customer.shippingAddress.zipCode}
+                                    ${order.cart.customer.shippingAddress.country}, ${order.cart.customer.shippingAddress.postalCode}
                                     <br>
                                 </address>
                             </div>
@@ -56,13 +52,14 @@
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <address>
                                     <strong>Billing Address</strong><br>
-                                    ${order.cart.customer.billingAddress.streetName}
-                                    <br>
+                                    
                                     ${order.cart.customer.billingAddress.apartmentNumber}
+                                    <br>
+                                    ${order.cart.customer.billingAddress.streetName}
                                     <br>
                                     ${order.cart.customer.billingAddress.city}, ${order.cart.customer.billingAddress.state}
                                     <br>
-                                    ${order.cart.customer.billingAddress.country}, ${order.cart.customer.billingAddress.zipCode}
+                                    ${order.cart.customer.billingAddress.country}, ${order.cart.customer.billingAddress.postalCode}
                                     <br>
                                 </address>
                             </div>
@@ -91,7 +88,7 @@
                                         <td></td>
                                         <td></td>
                                         <td class="text-right">
-                                            <h4><strong>Sub Total: </strong></h4>
+                                            <h4><strong>Total: </strong></h4>
                                         </td>
                                         <td class="text-center text-danger">
                                             <h4><strong>$ ${order.cart.subTotal}</strong></h4>
@@ -103,11 +100,11 @@
 
                         <input type="hidden" name="_flowExecutionKey" />
                     </div>
-                    <input type="submit" value="Next"  name="_eventId_customerInfoCollected" class="btn btn-primary btn-round" />
-                    <button class="btn btn-danger" name="_eventId_cancel">Cancel</button>
+                    <button class="btn btn-warning" name="_eventId_backToCollectShippingDetail">Back</button>
+                <input type="submit" value="Submit"  name="_eventId_orderConfirmed" class="btn btn-primary" />
+                <button class="btn btn-danger" name="_eventId_cancel">Cancel</button>
                 </div>
                 <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
-                <button class=""
                 </form:form>
                 <hr>
                 </div>
