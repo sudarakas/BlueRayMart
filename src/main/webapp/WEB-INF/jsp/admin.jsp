@@ -26,7 +26,7 @@
         <%@include  file="/WEB-INF/jsp/include/nav.jsp" %>
 
         <div class="page-header header-filter header-small" data-parallax="true"
-             style="background-image: url('/resources/images/cover-<%= (int) (Math.random() * 5) %>.jpg');">
+             style="background-image: url('/resources/images/cover-<%= (int) (Math.random() * 5)%>.jpg');">
             <div class="container">
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
@@ -43,7 +43,7 @@
             <div class="section">
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-3">
+                        <div class="col-md-6">
                             <div class="card card-raised card-background" style="background-image: url('../assets/img/examples/office2.jpg')">
                                 <div class="card-content">
                                     <h6 class="category text-info">BlueRayMart</h6>
@@ -59,55 +59,22 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-6">
                             <div class="card card-raised card-background" style="background-image: url('../assets/img/examples/office2.jpg')">
                                 <div class="card-content">
                                     <h6 class="category text-info">BlueRayMart</h6>
                                     <a href="#pablo">
-                                        <h3 class="card-title">View Inventory</h3>
+                                        <h3 class="card-title">Add Movie</h3>
                                     </a>
                                     <br>
                                     <br>
                                     <br>
-                                    <a href="#pablo" class="btn btn-danger btn-round">
-                                        View Inventory
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="card card-raised card-background" style="background-image: url('../assets/img/examples/office2.jpg')">
-                                <div class="card-content">
-                                    <h6 class="category text-info">BlueRayMart</h6>
-                                    <a href="#pablo">
-                                        <h3 class="card-title">View Inventory</h3>
-                                    </a>
-                                    <br>
-                                    <br>
-                                    <br>
-                                    <a href="#pablo" class="btn btn-danger btn-round">
-                                        View Inventory
+                                    <a href="/admin/movie/addmovie" class="btn btn-danger btn-round">
+                                        Add Movie
                                     </a>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-3">
-                            <div class="card card-raised card-background" style="background-image: url('../assets/img/examples/office2.jpg')">
-                                <div class="card-content">
-                                    <h6 class="category text-info">BlueRayMart</h6>
-                                    <a href="#pablo">
-                                        <h3 class="card-title">View Inventory</h3>
-                                    </a>
-                                    <br>
-                                    <br>
-                                    <br>
-                                    <a href="#pablo" class="btn btn-danger btn-round">
-                                        View Inventory
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
                     </div>
                 </div>
             </div>

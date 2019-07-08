@@ -130,7 +130,7 @@
                 </div>
 
                 <div class="col-md-4">
-                    <div class="card card-background" style="background-image: url(/resources/images/animation.jpg)">
+                    <div class="card card-background" style="background-image: url(/resources/images/romance.jpg)">
                         <div class="card-content">
                             <h6 class="category text-info">BlueRay Mart</h6>
                             <a href="#pablo">
@@ -148,7 +148,7 @@
                 </div>
 
                 <div class="col-md-6">
-                    <div class="card card-background" style="background-image: url(/resources/images/animation.jpg)">
+                    <div class="card card-background" style="background-image: url(/resources/images/cover-0.jpg)">
                         <div class="card-content">
                             <h6 class="category text-info">BlueRay Mart</h6>
                             <a href="#pablo">
@@ -166,7 +166,7 @@
                 </div>
 
                 <div class="col-md-6">
-                    <div class="card card-background" style="background-image: url(/resources/images/animation.jpg)">
+                    <div class="card card-background" style="background-image: url(/resources/images/horror.jpg)">
                         <div class="card-content">
                             <h6 class="category text-info">BlueRay Mart</h6>
                             <a href="#pablo">

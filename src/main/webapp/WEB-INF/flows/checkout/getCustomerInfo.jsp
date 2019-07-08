@@ -17,7 +17,7 @@
         <div class="container">
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
-                        <div class="brand">
+                        <div class="brand text-center">
                             <h1 class="title">Place Your Order</h1>
                             <h4>Free global delivery for all movies. Use coupon <b>uwuLife</b> for an extra 25% Off</h4>
                         </div>

@@ -54,7 +54,7 @@ public class CartResourceController {
     
     @RequestMapping(value = "/add/{movieId}", method = RequestMethod.PUT)
     @ResponseStatus(value = HttpStatus.NO_CONTENT)
-    public int addItem(@PathVariable(value = "movieId") int movieId,@AuthenticationPrincipal User activeUser){
+    public void addItem(@PathVariable(value = "movieId") int movieId,@AuthenticationPrincipal User activeUser){
         
 
         Customer customer = customerService.getCustomerByUsername(activeUser.getUsername());
@@ -63,14 +63,14 @@ public class CartResourceController {
         List<CartItem> cartItems = cart.getCartItems();
         
         
-        for (CartItem item : cartItems) {
-            if(movie.getMovieId()==item.getMovie().getMovieId()){
-//                CartItem cartItem = item;
-//                cartItem.setQuantity(cartItem.getQuantity()+1);
-//                cartItem.setTotalPrice(movie.getMoviePrice()*cartItem.getQuantity());
-//                cartItemService.addCartItem(cartItem);
-                
-                return 0;
+         for (int i=0; i<cartItems.size(); i++) {
+            if(movie.getMovieId()==cartItems.get(i).getMovie().getMovieId()){
+                CartItem cartItem = cartItems.get(i);
+                cartItem.setQuantity(cartItem.getQuantity()+1);
+                cartItem.setTotalPrice(movie.getMoviePrice()*cartItem.getQuantity());
+                cartItemService.addCartItem(cartItem);
+
+                return;
             }
         }
         
@@ -80,8 +80,6 @@ public class CartResourceController {
         cartItem.setTotalPrice(movie.getMoviePrice()*cartItem.getQuantity());
         cartItem.setCart(cart);
         cartItemService.addCartItem(cartItem);
-        
-        return 0;
         
     }
     

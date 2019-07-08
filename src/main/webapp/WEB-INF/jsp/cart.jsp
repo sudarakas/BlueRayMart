@@ -18,8 +18,12 @@
     <div class="page-header header-filter" data-parallax="true" filter-color="rose" style="background-image: url('/resources/images/cover-<%= (int) (Math.random() * 5)%>.jpg');">
         <div class="container">
             <div class="row title-row">
-                <div class="col-md-4 col-md-offset-8">
-                    <button class="btn btn-white pull-right"><i class="material-icons">shopping_cart</i> 0 Items</button>
+                <div class="brand text-center">
+                    <h1 class="title">BlueRay Mart</h1>
+                    <h4>Free global delivery for all movies. Use coupon <b>uwuLife</b> for an extra 25% Off</h4>
+                    <a href="/movie/movieList" target="" class="btn btn-rose">
+                        Shop More
+                    </a>
                 </div>
             </div>
         </div>
@@ -45,7 +49,7 @@
                                     <h4>Movie Cart</h4>
                                 </div>
                                 <div class="col-md-12">
-                                    
+
                                     <div class="table-responsive">
                                         <table class="table">
                                             <thead>
@@ -66,19 +70,19 @@
                                                     <td>{{item.quantity}}</td>
                                                     <td>{{item.totalPrice}}</td>
                                                     <td><a class="btn btn-danger btn-round" ng-click="removeFromCart(item.movie.movieId)">
-                                                             <i class="material-icons">close</i>
+                                                            <i class="material-icons">close</i>
                                                         </a></td>
                                                 </tr>
                                             </tbody>
                                         </table>
                                     </div>
 
-                            </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                    <hr>
+                <hr>
                 <div class="features text-center">
                     <div class="row">
                         <div class="col-md-4">

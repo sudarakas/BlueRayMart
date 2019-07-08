@@ -11,10 +11,7 @@
             <div class="row">
                 <div class="col-md-4">
                     <h5>About Us</h5>
-                    <p>Creative Tim is a startup that creates design tools that make the web development process
-                        faster and easier. </p>
-                    <p>We love the web and care deeply for how users interact with a digital product. We power
-                        businesses and individuals to create better looking web projects around the world. </p>
+                    <p>We love the web and care deeply for how users interact with a digital product. </p>
                 </div>
 
                 <div class="col-md-4">
@@ -39,9 +36,9 @@
                     <h5>Address</h5>
                     <p>
                         Visit us at:<br>
-                        Example.com<br>
-                        Box 564, Disneyland<br>
-                        USA
+                        Passara Road<br>
+                        Badulla<br>
+                        Sri Lanka
                     </p>
                 </div>
             </div>

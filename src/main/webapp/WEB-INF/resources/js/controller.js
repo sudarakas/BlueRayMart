@@ -24,10 +24,10 @@ cartApp.controller("cartCtrl", function ($scope, $http) {
         $scope.refreshCart(cartId);
     };
 
-    $scope.addToCart = function (movieId){
-        $http.put("/rest/cart/add/"+movieId).success(function(){
-             alert("Movie successfully add to the cart");
-         });
+    $scope.addToCart = function (movieId) {
+        $http.put("/rest/cart/add/" + movieId).success(function () {
+            alert("Movie successfully add to the cart");
+        });
     };
 
 
@@ -44,5 +44,10 @@ cartApp.controller("cartCtrl", function ($scope, $http) {
         }
 
         return subTotal;
+    };
+
+    $scope.returnCartItemCount = function () {
+
+        return $scope.cart.cartItems.lengthotal;
     };
 });
