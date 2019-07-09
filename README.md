@@ -6,7 +6,7 @@
 		* Java
 		* Maven
 		* HTML 5
-    		* CSS 3
+		* CSS 3
    		* Angular JS
 		* Bootstrap 4
     * Material KIT (I have removed the CSS File, because I have no permission to share it)
