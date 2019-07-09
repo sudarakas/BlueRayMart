@@ -86,34 +86,34 @@
                 <div class="features text-center">
                     <div class="row">
                         <div class="col-md-4">
-                            <div class="info">
-                                <div class="icon icon-info">
-                                    <i class="material-icons">local_shipping</i>
-                                </div>
-                                <h4 class="info-title">2 Days Delivery </h4>
-                                <p>Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough.</p>
+                        <div class="info">
+                            <div class="icon icon-info">
+                                <i class="material-icons">local_shipping</i>
                             </div>
+                            <h4 class="info-title">2 Days Delivery </h4>
+                            <p>Deliver with maximum 2 day in local postal addresses and maximum 14 days to Asian countries.</p>
                         </div>
+                    </div>
 
-                        <div class="col-md-4">
-                            <div class="info">
-                                <div class="icon icon-success">
-                                    <i class="material-icons">verified_user</i>
-                                </div>
-                                <h4 class="info-title">Refundable Policy</h4>
-                                <p>Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough.</p>
+                    <div class="col-md-4">
+                        <div class="info">
+                            <div class="icon icon-success">
+                                <i class="material-icons">verified_user</i>
                             </div>
+                            <h4 class="info-title">Refundable Policy</h4>
+                            <p>Full refunded will be provided with 14 days request.</p>
                         </div>
+                    </div>
 
-                        <div class="col-md-4">
-                            <div class="info">
-                                <div class="icon icon-rose">
-                                    <i class="material-icons">favorite</i>
-                                </div>
-                                <h4 class="info-title">Popular Item</h4>
-                                <p>Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough.</p>
+                    <div class="col-md-4">
+                        <div class="info">
+                            <div class="icon icon-rose">
+                                <i class="material-icons">favorite</i>
                             </div>
+                            <h4 class="info-title">Popular Items</h4>
+                            <p>World No 1 Quality Digital Copies will be provided with trust</p>
                         </div>
+                    </div>
 
                     </div>
                 </div>

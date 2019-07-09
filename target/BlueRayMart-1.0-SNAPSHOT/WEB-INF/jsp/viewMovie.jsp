@@ -131,7 +131,7 @@
                                 <i class="material-icons">local_shipping</i>
                             </div>
                             <h4 class="info-title">2 Days Delivery </h4>
-                            <p>Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough.</p>
+                            <p>Deliver with maximum 2 day in local postal addresses and maximum 14 days to Asian countries.</p>
                         </div>
                     </div>
 
@@ -141,7 +141,7 @@
                                 <i class="material-icons">verified_user</i>
                             </div>
                             <h4 class="info-title">Refundable Policy</h4>
-                            <p>Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough.</p>
+                            <p>Full refunded will be provided with 14 days request.</p>
                         </div>
                     </div>
 
@@ -150,8 +150,8 @@
                             <div class="icon icon-rose">
                                 <i class="material-icons">favorite</i>
                             </div>
-                            <h4 class="info-title">Popular Item</h4>
-                            <p>Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough.</p>
+                            <h4 class="info-title">Popular Items</h4>
+                            <p>World No 1 Quality Digital Copies will be provided with trust</p>
                         </div>
                     </div>
 

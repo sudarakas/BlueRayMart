@@ -27,7 +27,6 @@
 
     <action-state id="processOrder">
         <evaluate expression="cartItemDaoImp.removeCart(order.cart)" />
-<!--        <evaluate expression="cartItemDaoImpl.removeCart(order.cart)" />-->
         <transition to="thankCustomer" />
     </action-state>
 

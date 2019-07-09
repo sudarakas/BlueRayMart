@@ -102,7 +102,7 @@
                                     <div class="card card-product card-plain no-shadow" data-colored-shadow="false">
                                         <div class="card-image">
                                             <a href="<spring:url value="/movie/movieList/viewMovie/${movie.movieId}"/>">
-                                                <img src="<c:url value="/resources/images/${movie.movieId}.png"/>" alt="..."/>
+                                                <img src="<c:url value="/resources/images/${movie.movieId}.png"/>" alt="..." class="img-responsive"/>
                                             </a>
                                         </div>
                                         <div class="card-content">
