@@ -9,7 +9,7 @@
 		* CSS 3
    		* Angular JS
 		* Bootstrap 4
-    * Material KIT (I have removed the CSS File, because I have no permission to share it)
+		* Material KIT (I have removed the CSS & JS Files, because I have no permission to share it)
 	
 	How to Use
 		* Download the project
